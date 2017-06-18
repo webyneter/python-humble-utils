@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-"""Console script for python_humble_utils."""
-
 import click
 
 
