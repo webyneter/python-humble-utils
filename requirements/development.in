@@ -1,5 +1,7 @@
 -r common.txt
 
+ipython==6.1.0
+
 pip-tools==1.9.0
 bumpversion==0.5.3
 Sphinx==1.6.2
