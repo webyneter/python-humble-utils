@@ -2,26 +2,31 @@ import os
 import re
 import uuid
 from ast import literal_eval
-from collections import namedtuple
+from typing import NamedTuple, Sequence
 
 
-def extract_file_name_with_extension(file_path):
+def extract_file_name_with_extension(file_path: str) -> str:
     return os.path.basename(file_path)
 
 
-def extract_file_name_and_extension(file_path):
+NameAndExtension = NamedTuple('NameAndExtension', [
+    ('name', str),
+    ('extension', str)
+])
+
+
+def extract_file_name_and_extension(file_path: str) -> NameAndExtension:
     name_with_extension = extract_file_name_with_extension(file_path)
-    NameAndExtension = namedtuple('NameAndExtension', ['name', 'extension'])
     name, extension = os.path.splitext(name_with_extension)
-    return NameAndExtension(name=name, extension=extension)
+    return NameAndExtension(name, extension)
 
 
-def extract_file_dir_path(file_path):
+def extract_file_dir_path(file_path: str) -> str:
     dir_path = os.path.split(file_path)[0]
     return dir_path
 
 
-def parse_tuple_from_string(string_tuple):
+def parse_tuple_from_string(string_tuple: str) -> tuple:
     """
     Parse tuple from its literal string representation.
 
@@ -31,30 +36,33 @@ def parse_tuple_from_string(string_tuple):
     return literal_eval(string_tuple)
 
 
-def generate_random_file_basename(file_extension):
+def generate_random_file_basename(file_extension: str) -> str:
     file_basename = '%s%s' % (str(uuid.uuid4().hex), file_extension)
     return file_basename
 
 
-def generate_random_file_path(dir_path, file_extension):
+def generate_random_file_path(dir_path: str,
+                              file_extension: str) -> str:
     file_basename = generate_random_file_basename(file_extension=file_extension)
     file_path = os.path.join(dir_path, file_basename)
     return file_path
 
 
-def makedirs(dir_path, exist_ok=True):
+def makedirs(dir_path: str,
+             exist_ok: bool = True) -> None:
     os.makedirs(dir_path, exist_ok=exist_ok)
 
 
-def get_class_name(cls):
+def get_class_name(cls: type) -> str:
     return cls.__class__.__name__
 
 
-def get_class_qualname(cls):
+def get_class_qualname(cls: type) -> str:
     return cls.__qualname__
 
 
-def read_file(file_path, as_single_line=False):
+def read_file(file_path: str,
+              as_single_line: bool = False) -> str:
     with open(file_path, 'r') as file:
         lines = []
         for line in file.readlines():
@@ -66,7 +74,9 @@ def read_file(file_path, as_single_line=False):
 
 # todo: test
 # todo: resolve code duplication
-def get_file_paths(dir_path, allowed_file_extensions=None, recursively=False):
+def get_file_paths(dir_path: str,
+                   allowed_file_extensions: Sequence[str] = None,
+                   recursively: bool = False) -> Sequence[str]:
     """
     Get paths of files with extensions specified from the directory specified.
 
@@ -97,7 +107,9 @@ def get_file_paths(dir_path, allowed_file_extensions=None, recursively=False):
 
 
 # todo: test
-def generate_tmp_file_path(tmpdir_factory, file_name_with_extension, tmp_file_dir_path=None):
+def generate_tmp_file_path(tmpdir_factory,
+                           file_name_with_extension: str,
+                           tmp_file_dir_path: str = None) -> str:
     """
     Generate file path rooted in a temporary dir.
 
@@ -121,10 +133,11 @@ def generate_tmp_file_path(tmpdir_factory, file_name_with_extension, tmp_file_di
     return file_path
 
 
+# todo: !!! convert to a function with side effects
 # todo: test
-def create_or_update_file(file_path,
-                          file_content='',
-                          file_content_encoding='utf-8'):
+def create_or_update_file(file_path: str,
+                          file_content: str = '',
+                          file_content_encoding: str = 'utf-8') -> None:
     if file_content is None:
         raise ValueError('file_content must not be None!')
     if file_content_encoding is None:
@@ -135,7 +148,7 @@ def create_or_update_file(file_path,
     return file
 
 
-def camel_or_pascal_case_to_snake_case(s):
+def camel_or_pascal_case_to_snake_case(s: str) -> str:
     """
     https://stackoverflow.com/a/1176023/1557013
     :param s:
@@ -146,7 +159,8 @@ def camel_or_pascal_case_to_snake_case(s):
     return snake_case
 
 
-def get_all_subclasses(cls, including_self=False):
+def get_all_subclasses(cls: type,
+                       including_self: bool = False) -> Sequence[type]:
     """
     Get all subclasses of the class specified.
 
@@ -156,10 +170,10 @@ def get_all_subclasses(cls, including_self=False):
     """
     all_subclasses = [cls] if including_self else []
     for c in cls.__subclasses__():
-        all_subclasses += get_all_subclasses(c, including_self=True)
+        all_subclasses += get_all_subclasses(c, True)
     return all_subclasses
 
 
-def camel_or_pascal_case_to_space_delimited(s):
+def camel_or_pascal_case_to_space_delimited(s: str) -> str:
     space_delimited = re.sub(r'((?<=[a-z])[A-Z]|(?<!\A)[A-Z](?=[a-z]))', r' \1', s)
     return space_delimited
