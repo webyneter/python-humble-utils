@@ -2,9 +2,9 @@ class Foo:
     pass
 
 
-class Bar(Foo):
+class Boo(Foo):
     pass
 
 
-class Moo(Bar):
+class Moo(Boo):
     pass

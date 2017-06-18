@@ -3,7 +3,7 @@ from typing import Callable
 
 import pytest
 
-from .classes import Foo, Bar, Moo
+from .classes import Foo, Boo, Moo
 from ..commands import extract_file_name_with_extension, extract_file_dir_path, extract_file_name_and_extension, \
     generate_random_file_path, generate_random_file_basename, parse_tuple_from_string, read_file, \
     generate_tmp_file_path, create_or_update_file, camel_or_pascal_case_to_snake_case, get_all_subclasses, \
@@ -86,11 +86,11 @@ def test_when_converting_camel_or_pascal_case_to_snake_case_given_valid_data_sho
 
 
 def test_when_getting_all_subclasses_given_self_included_should_succeed():
-    assert set(get_all_subclasses(Foo, including_self=True)) == {Foo, Bar, Moo}
+    assert set(get_all_subclasses(Foo, including_self=True)) == {Foo, Boo, Moo}
 
 
 def test_when_getting_all_subclasses_given_self_excluded_should_succeed():
-    assert set(get_all_subclasses(Foo, including_self=False)) == {Bar, Moo}
+    assert set(get_all_subclasses(Foo, including_self=False)) == {Boo, Moo}
 
 
 @pytest.mark.parametrize('s,expected', [
