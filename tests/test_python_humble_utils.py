@@ -4,10 +4,8 @@
 """Tests for `python_humble_utils` package."""
 
 import pytest
-
 from click.testing import CliRunner
 
-from python_humble_utils import python_humble_utils
 from python_humble_utils import cli
 
 
