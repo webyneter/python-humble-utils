@@ -4,17 +4,4 @@
 #
 #    pip-compile --output-file production.txt production.in
 #
-decorator==4.0.11
-ipython-genutils==0.2.0
-ipython==6.1.0
-jedi==0.10.2
-pexpect==4.2.1
-pickleshare==0.7.4
-prompt-toolkit==1.0.14
-ptyprocess==0.5.1
-pygments==2.2.0
-simplegeneric==0.8.1
-six==1.10.0
-traitlets==4.3.2
-wcwidth==0.1.7
 wheel==0.29.0

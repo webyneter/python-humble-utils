@@ -4,17 +4,4 @@
 #
 #    pip-compile --output-file common.txt common.in
 #
-decorator==4.0.11         # via ipython, traitlets
-ipython-genutils==0.2.0   # via traitlets
-ipython==6.1.0
-jedi==0.10.2              # via ipython
-pexpect==4.2.1            # via ipython
-pickleshare==0.7.4        # via ipython
-prompt-toolkit==1.0.14    # via ipython
-ptyprocess==0.5.1         # via pexpect
-pygments==2.2.0           # via ipython
-simplegeneric==0.8.1      # via ipython
-six==1.10.0               # via prompt-toolkit, traitlets
-traitlets==4.3.2          # via ipython
-wcwidth==0.1.7            # via prompt-toolkit
 wheel==0.29.0
