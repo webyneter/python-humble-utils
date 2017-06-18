@@ -1,4 +1,4 @@
--r common.txt
+-r ./common.txt
 
 ipython==6.1.0
 
