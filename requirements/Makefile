@@ -19,7 +19,6 @@ check_pip_tools:
 	pip-compile --output-file $@ $<
 
 development.txt: check_pip_tools common.txt
-production.txt: check_pip_tools common.txt
 
 
 .PHONY: clean
