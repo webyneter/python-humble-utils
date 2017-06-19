@@ -1,5 +1,5 @@
 Welcome to Python Humble Utils's documentation!
-======================================
+===============================================
 
 Contents:
 
