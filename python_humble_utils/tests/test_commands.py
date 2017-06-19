@@ -1,8 +1,11 @@
 import os
+from pathlib import PurePath
 from typing import Callable, Sequence
 from uuid import UUID
 
 import pytest
+from hypothesis import given
+from hypothesis.strategies import integers
 
 from .classes import Foo, Boo, Moo
 from ..commands import extract_file_name_with_extension, extract_file_dir_path, extract_file_name_and_extension, \
@@ -48,6 +51,22 @@ def test_when_generating_hex_uuid_4_given_valid_arguments_should_succeed():
             UUID(hex=generate_hex_uuid_4(), version=4)
         except ValueError:
             pytest.fail()
+
+
+@given(subdir_count=integers(min_value=0, max_value=2))
+def test_when_generating_random_dir_path_given_valid_arguments_should_succeed(subdir_count: int):
+    dir_path = generate_random_dir_path(subdir_count)
+    subdirs = PurePath(dir_path).parts[1:]
+    assert len(subdirs) == subdir_count
+    # (Not testing the randomness of underlying UUIDs,
+    # since that is the implementation detail we do not want
+    # to rely upon.)
+
+
+@given(subdir_count=integers(max_value=-1))
+def test_when_generating_random_dir_path_given_invalid_arguments_should_raise(subdir_count: int):
+    with pytest.raises(ValueError):
+        generate_random_dir_path(subdir_count)
 
 
 def test_when_generating_random_file_name_with_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):

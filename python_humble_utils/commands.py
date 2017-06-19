@@ -39,7 +39,6 @@ def generate_hex_uuid_4() -> str:
     return str(uuid.uuid4().hex)
 
 
-# todo
 def generate_random_dir_path(subdir_count: int = 0) -> str:
     if subdir_count < 0:
         raise ValueError("'subdir_count' must not be negative!")
