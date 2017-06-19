@@ -20,9 +20,7 @@ Python Humble Utils
 
 Python utils for everyday use.
 
-
-* Free software: MIT license
-* Documentation: https://python-humble-utils.readthedocs.io.
+* Documentation: https://python-humble-utils.readthedocs.io
 
 
 Features
@@ -30,8 +28,9 @@ Features
 
 * TODO
 
+
 Credits
----------
+-------
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 

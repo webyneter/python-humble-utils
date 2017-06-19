@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install Python Humble Utils, run this command in your terminal:
+To install `python-humble-utils`, run this command in your terminal:
 
 .. code-block:: console
 
     $ pip install python_humble_utils
 
-This is the preferred method to install Python Humble Utils, as it will always install the most recent stable release. 
+This is the preferred method, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,7 +26,7 @@ you through the process.
 From sources
 ------------
 
-The sources for Python Humble Utils can be downloaded from the `Github repo`_.
+The sources for `python-humble-utils` can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
@@ -38,7 +38,7 @@ Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/webyneter/python_humble_utils/tarball/master
+    $ curl -OL https://github.com/webyneter/python_humble_utils/tarball/master
 
 Once you have a copy of the source, you can install it with:
 

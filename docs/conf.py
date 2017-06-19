@@ -256,7 +256,7 @@ texinfo_documents = [
      u'Python Humble Utils Documentation',
      u'Nikita P. Shupeyko',
      'python_humble_utils',
-     'One line description of project.',
+     'Python utils for everyday use.',
      'Miscellaneous'),
 ]
 

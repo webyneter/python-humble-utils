@@ -2,6 +2,9 @@
 Usage
 =====
 
-To use Python Humble Utils in a project::
+To use `python-humble-utils` in a project::
+
+.. code-block:: python
 
     import python_humble_utils
+
