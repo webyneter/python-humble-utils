@@ -6,9 +6,10 @@ import pytest
 from .classes import Foo, Boo, Moo
 from ..commands import extract_file_name_with_extension, extract_file_dir_path, extract_file_name_and_extension, \
     generate_random_file_path, generate_random_file_basename, parse_tuple_from_string, read_file, \
-    generate_tmp_file_path, create_or_update_file, camel_or_pascal_case_to_snake_case, get_all_subclasses, \
+    create_or_update_file, camel_or_pascal_case_to_snake_case, get_all_subclasses, \
     camel_or_pascal_case_to_space_delimited
 from ..conftest import ValidFileMeta
+from ..pytest_commands import generate_tmp_file_path
 
 
 def test_when_extracting_file_name_with_extension_given_valid_arguments_should_succeed(valid_file_meta: ValidFileMeta):

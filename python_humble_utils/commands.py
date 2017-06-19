@@ -97,34 +97,6 @@ def get_file_paths(dir_path: str,
     return file_paths
 
 
-# todo: test
-def generate_tmp_file_path(tmpdir_factory,
-                           file_name_with_extension: str,
-                           tmp_file_dir_path: str = None) -> str:
-    """
-    Generate file path rooted in a temporary dir.
-
-    :param tmpdir_factory: py.test's tmpdir_factory fixture.
-    :param file_name_with_extension: e.g. 'file.ext'
-    :param tmp_file_dir_path: generated tmp file directory path relative to base tmp dir,
-    e.g. 'path/relative/to/basetemp'.
-    :return: generated file path.
-    """
-    tmp_file_dir = tmpdir_factory.getbasetemp()
-
-    if tmp_file_dir_path:
-        if os.path.isabs(tmp_file_dir_path):
-            raise ValueError('tmp_file_dir_path must be a relative path!')
-        # http://stackoverflow.com/a/16595356/1557013
-        for tmp_file_dir_path_part in os.path.normpath(tmp_file_dir_path).split(os.sep):
-            # Accounting for possible path separator at the end.
-            if tmp_file_dir_path_part:
-                tmp_file_dir.mktemp(tmp_file_dir_path_part)
-
-    file_path = str(tmp_file_dir.join(file_name_with_extension))
-    return file_path
-
-
 def create_or_update_file(file_path: str,
                           file_content: str = '',
                           file_content_encoding: str = 'utf-8') -> None:
