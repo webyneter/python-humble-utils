@@ -4,10 +4,6 @@ import uuid
 from ast import literal_eval
 from typing import NamedTuple, Sequence
 
-__all__ = [
-    '',
-]
-
 
 def extract_file_name_with_extension(file_path: str) -> str:
     return os.path.basename(file_path)
@@ -26,8 +22,7 @@ def extract_file_name_and_extension(file_path: str) -> NameAndExtension:
 
 
 def extract_file_dir_path(file_path: str) -> str:
-    dir_path = os.path.split(file_path)[0]
-    return dir_path
+    return os.path.split(file_path)[0]
 
 
 def parse_tuple_from_string(string_tuple: str) -> tuple:
@@ -40,15 +35,34 @@ def parse_tuple_from_string(string_tuple: str) -> tuple:
     return literal_eval(string_tuple)
 
 
-def generate_random_file_basename(file_extension: str) -> str:
-    file_basename = '%s%s' % (str(uuid.uuid4().hex), file_extension)
-    return file_basename
+# todo
+def generate_uuid(is_hex: bool = True) -> str:
+    _uuid = uuid.uuid4()
+    return str(_uuid.hex) if is_hex else str(_uuid)
 
 
+# todo
+def generate_random_dir_path(subdir_count: int = 0) -> str:
+    if subdir_count < 0:
+        raise ValueError("'subdir_count' must not be negative!")
+
+    dir_path = os.path.join(generate_uuid(), '')
+    if subdir_count > 0:
+        for l in range(subdir_count):
+            dir_path = os.path.join(dir_path, generate_uuid())
+
+    return dir_path
+
+
+def generate_random_file_name_with_extension(file_extension: str) -> str:
+    return "{}{}".format(generate_uuid(), file_extension)
+
+
+# todo: get rid of, combining the above two instead
 def generate_random_file_path(dir_path: str,
                               file_extension: str) -> str:
-    file_basename = generate_random_file_basename(file_extension=file_extension)
-    file_path = os.path.join(dir_path, file_basename)
+    file_name_with_extension = generate_random_file_name_with_extension(file_extension)
+    file_path = os.path.join(dir_path, file_name_with_extension)
     return file_path
 
 
@@ -63,10 +77,8 @@ def read_file(file_path: str,
         return ''.join(lines)
 
 
-# todo: test
-# todo: resolve code duplication
 def get_file_paths(dir_path: str,
-                   allowed_file_extensions: Sequence[str] = None,
+                   allowed_file_extensions: Sequence[str],
                    recursively: bool = False) -> Sequence[str]:
     """
     Get paths of files with extensions specified from the directory specified.
@@ -76,24 +88,24 @@ def get_file_paths(dir_path: str,
     :param recursively: whether or not to traverse the directpry recursively.
     :return: a list of matching files.
     """
+
+    def filter_allowed_file_paths(dp: str, fbs: Sequence[str], afe: Sequence[str]) -> Sequence[str]:
+        ps = []
+        for fb in fbs:
+            p = os.path.join(dp, fb)
+            if extract_file_name_and_extension(p).extension in afe:
+                ps.append(p)
+        return ps
+
     file_paths = []
+
     if recursively:
-        for root, _, file_basenames in os.walk(dir_path):
-            for file_basename in file_basenames:
-                file_path = os.path.join(root, file_basename)
-                if allowed_file_extensions:
-                    file_extension = extract_file_name_and_extension(file_path).extension
-                    if file_extension not in allowed_file_extensions:
-                        continue
-                file_paths.append(file_path)
+        for root_dir_path, _, file_basenames in os.walk(dir_path):
+            file_paths = filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
     else:
-        for file_basename in os.listdir(dir_path):
-            file_path = os.path.join(dir_path, file_basename)
-            if allowed_file_extensions:
-                file_extension = extract_file_name_and_extension(file_path).extension
-                if file_extension not in allowed_file_extensions:
-                    continue
-            file_paths.append(file_path)
+        file_basenames = os.listdir(dir_path)
+        file_paths = filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
+
     return file_paths
 
 

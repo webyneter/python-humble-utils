@@ -1,33 +1,33 @@
 import os
-from typing import Callable
+from typing import Callable, Sequence
 
 import pytest
 
 from .classes import Foo, Boo, Moo
 from ..commands import extract_file_name_with_extension, extract_file_dir_path, extract_file_name_and_extension, \
-    generate_random_file_path, generate_random_file_basename, parse_tuple_from_string, read_file, \
+    generate_random_file_path, generate_random_file_name_with_extension, parse_tuple_from_string, read_file, \
     create_or_update_file, camel_or_pascal_case_to_snake_case, get_all_subclasses, \
-    camel_or_pascal_case_to_space_delimited
-from ..conftest import ValidFileMeta
+    camel_or_pascal_case_to_space_delimited, generate_random_dir_path, get_file_paths
+from ..conftest import FileMeta
 from ..pytest_commands import generate_tmp_file_path
 
 
-def test_when_extracting_file_name_with_extension_given_valid_arguments_should_succeed(valid_file_meta: ValidFileMeta):
-    actual = extract_file_name_with_extension(valid_file_meta.file_path)
-    expected = valid_file_meta.file_name_with_extension
+def test_when_extracting_file_name_with_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):
+    actual = extract_file_name_with_extension(file_meta.file_path)
+    expected = file_meta.file_name_with_extension
     assert actual == expected
 
 
-def test_when_extracting_file_name_and_extension_given_valid_arguments_should_succeed(valid_file_meta: ValidFileMeta):
-    name_and_extension = extract_file_name_and_extension(valid_file_meta.file_path)
-    assert name_and_extension.name == valid_file_meta.file_name
-    assert name_and_extension.extension == valid_file_meta.file_extension
+def test_when_extracting_file_name_and_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):
+    name_and_extension = extract_file_name_and_extension(file_meta.file_path)
+    assert name_and_extension.name == file_meta.file_name
+    assert name_and_extension.extension == file_meta.file_extension
 
 
-def test_when_extracting_file_dir_path_given_valid_arguments_should_succeed(valid_file_meta: ValidFileMeta):
-    file_path = valid_file_meta.file_path
+def test_when_extracting_file_dir_path_given_valid_arguments_should_succeed(file_meta: FileMeta):
+    file_path = file_meta.file_path
     actual_file_dir_path = extract_file_dir_path(file_path=file_path)
-    assert actual_file_dir_path == valid_file_meta.dir_path
+    assert actual_file_dir_path == file_meta.dir_path
 
 
 @pytest.mark.parametrize('tup,verifier', [
@@ -40,15 +40,15 @@ def test_when_parsing_tuple_from_string_given_valid_arguments_should_succeed(tup
     assert verifier(parsed_tup)
 
 
-def test_when_generating_random_file_basename_given_valid_arguments_should_succeed(valid_file_meta: ValidFileMeta):
-    file_extension = valid_file_meta.file_extension
-    actual_file_basename = generate_random_file_basename(file_extension)
+def test_when_generating_random_file_name_with_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):
+    file_extension = file_meta.file_extension
+    actual_file_basename = generate_random_file_name_with_extension(file_extension)
     assert extract_file_name_and_extension(actual_file_basename).extension == file_extension
 
 
-def test_when_generating_random_file_path_given_valid_arguments_should_succeed(valid_file_meta: ValidFileMeta):
-    dir_path = valid_file_meta.dir_path
-    file_extension = valid_file_meta.file_extension
+def test_when_generating_random_file_path_given_valid_arguments_should_succeed(file_meta: FileMeta):
+    dir_path = file_meta.dir_path
+    file_extension = file_meta.file_extension
     actual_file_path = generate_random_file_path(dir_path=dir_path,
                                                  file_extension=file_extension)
     assert extract_file_dir_path(actual_file_path) == dir_path
@@ -60,51 +60,90 @@ def test_when_generating_random_file_path_given_valid_arguments_should_succeed(v
     (False, lambda file_content: os.linesep in file_content),
 ])
 def test_when_reading_file_given_valid_arguments_should_succeed(tmpdir_factory,
-                                                                valid_file_meta: ValidFileMeta,
+                                                                file_meta: FileMeta,
                                                                 as_single_line: bool,
                                                                 verifier: Callable[[str], bool]):
-    tmp_file_path = generate_tmp_file_path(tmpdir_factory, valid_file_meta.file_name_with_extension)
-    create_or_update_file(tmp_file_path, valid_file_meta.file_content, valid_file_meta.file_content_encoding)
+    tmp_file_path = generate_tmp_file_path(tmpdir_factory, file_meta.file_name_with_extension)
+    create_or_update_file(tmp_file_path, file_meta.file_content, file_meta.file_content_encoding)
 
     file_content = read_file(tmp_file_path, as_single_line)
 
     assert verifier(file_content)
 
 
-def test_when_getting_file_paths_given_dir_with_files_without_subdirs_should_succeed():
-    pass
+@pytest.mark.parametrize('allowed_file_extensions,max_subdir_count', [
+    ([], 0),
+    (['.a'], 0),
+    (['.a', '.b'], 0),
+    ([], 1),
+    ([], 2),
+    (['.a'], 1),
+    (['.a'], 2),
+    (['.a', '.b'], 1),
+    (['.a', '.b'], 2),
+])
+def test_when_getting_file_paths_given_valid_arguments_should_succeed(tmpdir_factory,
+                                                                      allowed_file_extensions: Sequence[str],
+                                                                      max_subdir_count: int):
+    recursively = max_subdir_count > 0
 
+    for subdir_count in range(max_subdir_count + 1):
+        dir_path = generate_random_dir_path(subdir_count)
+        dir_path = os.path.join(str(tmpdir_factory.getbasetemp()), dir_path)
 
-def test_when_getting_file_paths_given_dir_with_files_and_subdirs_should_succeed():
-    pass
+        # Generate paths to files...
+        # ...with a disallowed extension:
+        file_extension_suffix = 'z'
+        if len(allowed_file_extensions) > 0:
+            disallowed_file_extension = allowed_file_extensions[-1] + file_extension_suffix
+        else:
+            disallowed_file_extension = '.{}'.format(file_extension_suffix)
+        disallowed_file_name_with_extension = generate_random_file_name_with_extension(disallowed_file_extension)
+        disallowed_file_path = os.path.join(dir_path, disallowed_file_name_with_extension)
+        # ...with allowed extensions:
+        allowed_file_names_with_extension = [generate_random_file_name_with_extension(e)
+                                             for e in allowed_file_extensions]
+        allowed_file_paths = [os.path.join(dir_path, fne)
+                              for fne in allowed_file_names_with_extension]
+
+        # Create files in respective dirs.
+        os.makedirs(dir_path, exist_ok=True)
+        open(disallowed_file_path, 'w+').close()
+        for p in allowed_file_paths:
+            open(p, 'w+').close()
+
+        # Assert.
+        actual = set(get_file_paths(dir_path, allowed_file_extensions, recursively))
+        expected = set(allowed_file_paths)
+        assert actual == expected
 
 
 def test_when_creating_or_updating_file_given_file_not_exists_should_create_file(tmpdir_factory,
-                                                                                 valid_file_meta: ValidFileMeta):
-    tmp_dir_path = os.path.join(str(tmpdir_factory.getbasetemp()), valid_file_meta.dir_path)
-    tmp_file_path = os.path.join(tmp_dir_path, valid_file_meta.file_name_with_extension)
+                                                                                 file_meta: FileMeta):
+    tmp_dir_path = os.path.join(str(tmpdir_factory.getbasetemp()), file_meta.dir_path)
+    tmp_file_path = os.path.join(tmp_dir_path, file_meta.file_name_with_extension)
 
     os.makedirs(tmp_dir_path, exist_ok=True)
-    create_or_update_file(tmp_file_path, valid_file_meta.file_content, valid_file_meta.file_content_encoding)
+    create_or_update_file(tmp_file_path, file_meta.file_content, file_meta.file_content_encoding)
 
     with open(tmp_file_path, 'rb') as file:
-        assert file.read().decode(valid_file_meta.file_content_encoding) == valid_file_meta.file_content
+        assert file.read().decode(file_meta.file_content_encoding) == file_meta.file_content
 
 
 def test_when_creating_or_updating_file_given_file_exists_should_update_file(tmpdir_factory,
-                                                                             valid_file_meta: ValidFileMeta):
-    tmp_dir_path = os.path.join(str(tmpdir_factory.getbasetemp()), valid_file_meta.dir_path)
-    tmp_file_path = os.path.join(tmp_dir_path, valid_file_meta.file_name_with_extension)
+                                                                             file_meta: FileMeta):
+    tmp_dir_path = os.path.join(str(tmpdir_factory.getbasetemp()), file_meta.dir_path)
+    tmp_file_path = os.path.join(tmp_dir_path, file_meta.file_name_with_extension)
 
     os.makedirs(tmp_dir_path, exist_ok=True)
     with open(tmp_file_path, 'wb') as file:
-        file.write(valid_file_meta.file_content.encode(valid_file_meta.file_content_encoding))
+        file.write(file_meta.file_content.encode(file_meta.file_content_encoding))
 
-    updated_file_content = valid_file_meta.file_content + ' (+ this update)'
-    create_or_update_file(tmp_file_path, updated_file_content, valid_file_meta.file_content_encoding)
+    updated_file_content = file_meta.file_content + ' (+ this update)'
+    create_or_update_file(tmp_file_path, updated_file_content, file_meta.file_content_encoding)
 
     with open(tmp_file_path, 'rb') as file:
-        assert file.read().decode(valid_file_meta.file_content_encoding) == updated_file_content
+        assert file.read().decode(file_meta.file_content_encoding) == updated_file_content
 
 
 @pytest.mark.parametrize('s,expected', [
