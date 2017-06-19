@@ -4,6 +4,10 @@ import uuid
 from ast import literal_eval
 from typing import NamedTuple, Sequence
 
+__all__ = [
+    '',
+]
+
 
 def extract_file_name_with_extension(file_path: str) -> str:
     return os.path.basename(file_path)
@@ -107,6 +111,7 @@ def generate_tmp_file_path(tmpdir_factory,
     :return: generated file path.
     """
     tmp_file_dir = tmpdir_factory.getbasetemp()
+
     if tmp_file_dir_path:
         if os.path.isabs(tmp_file_dir_path):
             raise ValueError('tmp_file_dir_path must be a relative path!')
@@ -120,19 +125,11 @@ def generate_tmp_file_path(tmpdir_factory,
     return file_path
 
 
-# todo: !!! convert to a function with side effects
-# todo: test
 def create_or_update_file(file_path: str,
                           file_content: str = '',
                           file_content_encoding: str = 'utf-8') -> None:
-    if file_content is None:
-        raise ValueError('file_content must not be None!')
-    if file_content_encoding is None:
-        raise ValueError('file_content_encoding must not be None!')
-
     with open(file_path, 'wb+') as file:
         file.write(file_content.encode(file_content_encoding))
-    return file
 
 
 def camel_or_pascal_case_to_snake_case(s: str) -> str:
