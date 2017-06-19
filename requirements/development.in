@@ -12,6 +12,7 @@ pytest-mock==1.6.0
 pytest-runner==2.11.1
 coverage==4.4.1
 flake8==3.3.0
+hypothesis==3.11.6
 
 watchdog==0.8.3
 cryptography==1.9
