@@ -41,11 +41,13 @@ def test_when_parsing_tuple_from_string_given_valid_arguments_should_succeed(tup
     assert verifier(parsed_tup)
 
 
-def test_when_generating_hex_uuid_4_given_not_hex_should_succeed():
-    try:
-        UUID(hex=generate_hex_uuid_4(), version=4)
-    except ValueError:
-        pytest.fail()
+def test_when_generating_hex_uuid_4_given_valid_arguments_should_succeed():
+    retry_count = 128
+    for i in range(retry_count):
+        try:
+            UUID(hex=generate_hex_uuid_4(), version=4)
+        except ValueError:
+            pytest.fail()
 
 
 def test_when_generating_random_file_name_with_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):
