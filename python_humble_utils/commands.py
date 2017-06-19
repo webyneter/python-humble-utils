@@ -48,19 +48,6 @@ def generate_random_file_path(dir_path: str,
     return file_path
 
 
-def makedirs(dir_path: str,
-             exist_ok: bool = True) -> None:
-    os.makedirs(dir_path, exist_ok=exist_ok)
-
-
-def get_class_name(cls: type) -> str:
-    return cls.__class__.__name__
-
-
-def get_class_qualname(cls: type) -> str:
-    return cls.__qualname__
-
-
 def read_file(file_path: str,
               as_single_line: bool = False) -> str:
     with open(file_path, 'r') as file:
