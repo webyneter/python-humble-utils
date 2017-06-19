@@ -1,5 +1,6 @@
 import os
 from typing import Callable, Sequence
+from uuid import UUID
 
 import pytest
 
@@ -7,7 +8,7 @@ from .classes import Foo, Boo, Moo
 from ..commands import extract_file_name_with_extension, extract_file_dir_path, extract_file_name_and_extension, \
     generate_random_file_path, generate_random_file_name_with_extension, parse_tuple_from_string, read_file, \
     create_or_update_file, camel_or_pascal_case_to_snake_case, get_all_subclasses, \
-    camel_or_pascal_case_to_space_delimited, generate_random_dir_path, get_file_paths
+    camel_or_pascal_case_to_space_delimited, generate_random_dir_path, get_file_paths, generate_hex_uuid_4
 from ..conftest import FileMeta
 from ..pytest_commands import generate_tmp_file_path
 
@@ -38,6 +39,13 @@ def test_when_parsing_tuple_from_string_given_valid_arguments_should_succeed(tup
                                                                              verifier: Callable[[str], bool]):
     parsed_tup = parse_tuple_from_string(tup)
     assert verifier(parsed_tup)
+
+
+def test_when_generating_hex_uuid_4_given_not_hex_should_succeed():
+    try:
+        UUID(hex=generate_hex_uuid_4(), version=4)
+    except ValueError:
+        pytest.fail()
 
 
 def test_when_generating_random_file_name_with_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):

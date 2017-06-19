@@ -35,10 +35,8 @@ def parse_tuple_from_string(string_tuple: str) -> tuple:
     return literal_eval(string_tuple)
 
 
-# todo
-def generate_uuid(is_hex: bool = True) -> str:
-    _uuid = uuid.uuid4()
-    return str(_uuid.hex) if is_hex else str(_uuid)
+def generate_hex_uuid_4() -> str:
+    return str(uuid.uuid4().hex)
 
 
 # todo
@@ -46,16 +44,16 @@ def generate_random_dir_path(subdir_count: int = 0) -> str:
     if subdir_count < 0:
         raise ValueError("'subdir_count' must not be negative!")
 
-    dir_path = os.path.join(generate_uuid(), '')
+    dir_path = os.path.join(generate_hex_uuid_4(), '')
     if subdir_count > 0:
         for l in range(subdir_count):
-            dir_path = os.path.join(dir_path, generate_uuid())
+            dir_path = os.path.join(dir_path, generate_hex_uuid_4())
 
     return dir_path
 
 
 def generate_random_file_name_with_extension(file_extension: str) -> str:
-    return "{}{}".format(generate_uuid(), file_extension)
+    return "{}{}".format(generate_hex_uuid_4(), file_extension)
 
 
 # todo: get rid of, combining the above two instead
