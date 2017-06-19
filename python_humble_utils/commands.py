@@ -55,14 +55,6 @@ def generate_random_file_name_with_extension(file_extension: str) -> str:
     return "{}{}".format(generate_hex_uuid_4(), file_extension)
 
 
-# todo: get rid of, combining the above two instead
-def generate_random_file_path(dir_path: str,
-                              file_extension: str) -> str:
-    file_name_with_extension = generate_random_file_name_with_extension(file_extension)
-    file_path = os.path.join(dir_path, file_name_with_extension)
-    return file_path
-
-
 def read_file(file_path: str,
               as_single_line: bool = False) -> str:
     with open(file_path, 'r') as file:
