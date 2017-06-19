@@ -47,10 +47,7 @@ def test_when_parsing_tuple_from_string_given_valid_arguments_should_succeed(tup
 def test_when_generating_hex_uuid_4_given_valid_arguments_should_succeed():
     retry_count = 128
     for i in range(retry_count):
-        try:
-            UUID(hex=generate_hex_uuid_4(), version=4)
-        except ValueError:
-            pytest.fail()
+        UUID(hex=generate_hex_uuid_4(), version=4)
 
 
 @given(subdir_count=integers(min_value=0, max_value=2))
