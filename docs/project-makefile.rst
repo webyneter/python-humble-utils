@@ -26,7 +26,7 @@ To facilitate smooth development worflow, we provide a `Makefile` defining a num
 
 * `test` running `py.test`_::
 
-    $ maketestlint
+    $ make test
 
 * `test-all` running `tox`_::
 
