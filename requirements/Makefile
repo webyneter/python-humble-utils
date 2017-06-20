@@ -18,8 +18,9 @@ check_pip_tools:
 %.txt: %.in
 	pip-compile --output-file $@ $<
 
-development.txt: check_pip_tools common.txt test.txt
-production.txt: check_pip_tools test.txt
+base.txt: check_pip_tools
+development.txt: check_pip_tools base.txt test.txt
+test.txt: check_pip_tools base.txt
 
 
 .PHONY: clean

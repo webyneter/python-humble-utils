@@ -16,3 +16,4 @@ pytest-mock==1.6.0
 pytest==3.1.2
 tox==2.7.0
 virtualenv==15.1.0        # via tox
+wheel==0.29.0

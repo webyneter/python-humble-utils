@@ -1,3 +1,5 @@
+-r ./base.txt
+
 tox==2.7.0
 pytest==3.1.2
 pytest-mock==1.6.0
