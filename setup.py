@@ -48,7 +48,7 @@ install_requirements = [
 ]
 
 setup_requirements = [
-    'pytest-runner==2.11.1',
+    'pytest-runner',
 ]
 
 # endregion
