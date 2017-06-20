@@ -3,9 +3,9 @@ from pathlib import PurePath
 from typing import Callable, Sequence
 from uuid import UUID
 
-import pytest
 from hypothesis import given
 from hypothesis.strategies import integers
+from pytest import mark, raises
 
 from .classes import Foo, Boo, Moo
 from ..commands import extract_file_name_with_extension, extract_file_dir_path, extract_file_name_and_extension, \
@@ -35,7 +35,7 @@ def test_when_extracting_file_dir_path_given_valid_arguments_should_succeed(file
     assert actual_file_dir_path == file_meta.dir_path
 
 
-@pytest.mark.parametrize('tup,verifier', [
+@mark.parametrize('tup,verifier', [
     ("('text', 42)", lambda tup: isinstance(tup, tuple) and tup[0] == 'text' and tup[1] == 42),
     ('()', lambda tup: tup == ()),
 ])
@@ -63,7 +63,7 @@ def test_when_generating_random_dir_path_given_valid_arguments_should_succeed(su
 
 @given(subdir_count=integers(max_value=-1))
 def test_when_generating_random_dir_path_given_invalid_arguments_should_raise(subdir_count: int):
-    with pytest.raises(ValueError):
+    with raises(ValueError):
         generate_random_dir_path(subdir_count)
 
 
@@ -73,7 +73,7 @@ def test_when_generating_random_file_name_with_extension_given_valid_arguments_s
     assert extract_file_name_and_extension(actual_file_basename).extension == file_extension
 
 
-@pytest.mark.parametrize('as_single_line,verifier', [
+@mark.parametrize('as_single_line,verifier', [
     (True, lambda file_content: os.linesep not in file_content),
     (False, lambda file_content: os.linesep in file_content),
 ])
@@ -89,7 +89,7 @@ def test_when_reading_file_given_valid_arguments_should_succeed(tmpdir_factory,
     assert verifier(file_content)
 
 
-@pytest.mark.parametrize('allowed_file_extensions,max_subdir_count', [
+@mark.parametrize('allowed_file_extensions,max_subdir_count', [
     ([], 0),
     (['.a'], 0),
     (['.a', '.b'], 0),
@@ -164,7 +164,7 @@ def test_when_creating_or_updating_file_given_file_exists_should_update_file(tmp
         assert file.read().decode(file_meta.file_content_encoding) == updated_file_content
 
 
-@pytest.mark.parametrize('s,expected', [
+@mark.parametrize('s,expected', [
     ('IAmInCamelCase_but_i_am_not_AndHereAmIOnceAgain',
      'i_am_in_camel_case_but_i_am_not__and_here_am_i_once_again'),
     ('iAmInPascalCase_but_i_am_not_andHereAmIOnceAgain',
@@ -175,7 +175,7 @@ def test_when_converting_camel_or_pascal_case_to_snake_case_given_valid_argument
     assert camel_or_pascal_case_to_snake_case(s) == expected
 
 
-@pytest.mark.parametrize('s,expected', [
+@mark.parametrize('s,expected', [
     ('iAmASTRANGECamelCase',
      'i Am ASTRANGE Camel Case'),
     ('YetAnotherOneBUTNOWWhilebeingastrangeOneIamStillAProperPascalCase',

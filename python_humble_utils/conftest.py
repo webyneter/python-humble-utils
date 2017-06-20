@@ -1,7 +1,7 @@
 import os
 from typing import NamedTuple
 
-import pytest
+from pytest import fixture
 
 FileMeta = NamedTuple('FileMeta', [
     ('dir_path', str),
@@ -14,7 +14,7 @@ FileMeta = NamedTuple('FileMeta', [
 ])
 
 
-@pytest.fixture
+@fixture
 def file_meta():
     dir_path = os.path.join('path', 'to', 'dir', 'with')
     file_content = os.linesep.join(['Behold,', 'this', 'is', 'multiline', 'content!'])
