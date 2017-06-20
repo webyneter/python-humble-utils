@@ -74,7 +74,7 @@ Usage
 
     import os
 
-    from  python_humble_utils.commands import (
+    from python_humble_utils.commands import (
         yield_file_paths,
         camel_or_pascal_case_to_snake_case
     )
