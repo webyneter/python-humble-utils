@@ -19,8 +19,8 @@ def file_meta():
     dir_path = os.path.join('path', 'to', 'dir', 'with')
     file_content = os.linesep.join(['Behold,', 'this', 'is', 'multiline', 'content!'])
     file_content_encoding = 'utf-8'
-    file_name = 'file'
-    file_extension = '.extension'
+    file_name = 'name'
+    file_extension = '.ext'
     file_name_with_extension = file_name + file_extension
     file_path = os.path.join(dir_path, file_name_with_extension)
     return FileMeta(dir_path=dir_path,
