@@ -50,7 +50,7 @@ Features
 Credits
 -------
 
-The project package was scaffolded via Cookiecutter_ with the `audreyr/cookiecutter-pypackage`_ template.
+This package was scaffolded via Cookiecutter_ with the `audreyr/cookiecutter-pypackage`_ template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage

@@ -2,7 +2,7 @@
 Usage
 =====
 
-To use `python-humble-utils` in a project::
+To use `python-humble-utils` in a project
 
 .. code-block:: python
 
