@@ -81,7 +81,7 @@ setup(
     setup_requires=setup_requirements,
     zip_safe=False,
 
-    license="MIT license",
+    license="MIT",
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
