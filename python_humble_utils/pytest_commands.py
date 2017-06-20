@@ -5,13 +5,12 @@ def generate_tmp_file_path(tmpdir_factory,
                            file_name_with_extension: str,
                            tmp_dir_path: str = None) -> str:
     """
-    Generate file path rooted in a temporary dir.
+    Generate file path relative to a temporary directory.
 
-    :param tmpdir_factory: py.test's tmpdir_factory fixture.
-    :param file_name_with_extension: e.g. 'file.ext'
-    :param tmp_dir_path: generated tmp file directory path relative to base tmp dir,
-    e.g. 'file/is/here'.
-    :return: generated file path.
+    :param tmpdir_factory: py.test's `tmpdir_factory` fixture.
+    :param file_name_with_extension: file name with extension e.g. `file_name.ext`.
+    :param tmp_dir_path: path to directory (relative to the temporary one created by `tmpdir_factory`) where the generated file path should reside. # noqa
+    :return: file path.
     """
     basetemp = tmpdir_factory.getbasetemp()
 
