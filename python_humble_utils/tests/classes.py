@@ -1,5 +1,6 @@
 class Foo:
-    pass
+    class InsideFoo:
+        pass
 
 
 class Boo(Foo):

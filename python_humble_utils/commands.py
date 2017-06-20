@@ -196,3 +196,23 @@ def get_all_subclasses(cls: type,
     for c in cls.__subclasses__():
         all_subclasses += get_all_subclasses(c, True)
     return all_subclasses
+
+
+def get_class_name(cls: type) -> str:
+    """
+    Get class name.
+
+    :param cls: class.
+    :return: :param cls: name.
+    """
+    return cls.__class__.__name__
+
+
+def get_class_qualname(cls: type) -> str:
+    """
+    Get fully-qualified class name.
+
+    :param cls: class.
+    :return: fully-qualified :param cls: name.
+    """
+    return cls.__qualname__
