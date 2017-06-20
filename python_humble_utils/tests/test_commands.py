@@ -11,7 +11,7 @@ from .classes import Foo, Boo, Moo
 from ..commands import extract_file_name_with_extension, extract_file_dir_path, extract_file_name_and_extension, \
     generate_random_file_name_with_extension, parse_tuple_from_string, read_file, \
     create_or_update_file, camel_or_pascal_case_to_snake_case, get_all_subclasses, \
-    camel_or_pascal_case_to_space_delimited, generate_random_dir_path, get_file_paths, generate_hex_uuid_4, \
+    camel_or_pascal_case_to_space_delimited, generate_random_dir_path, yield_file_paths, generate_hex_uuid_4, \
     get_class_name
 from ..conftest import FileMeta
 from ..pytest_commands import generate_tmp_file_path
@@ -131,7 +131,7 @@ def test_when_getting_file_paths_given_valid_arguments_should_succeed(tmpdir_fac
             open(p, 'w+').close()
 
         # Assert.
-        actual = set(get_file_paths(dir_path, allowed_file_extensions, recursively))
+        actual = set(yield_file_paths(dir_path, allowed_file_extensions, recursively))
         expected = set(allowed_file_paths)
         assert actual == expected
 

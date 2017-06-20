@@ -2,7 +2,7 @@ import os
 import re
 import uuid
 from ast import literal_eval
-from typing import NamedTuple, Sequence
+from typing import NamedTuple, Sequence, Iterable
 
 
 def extract_file_name_with_extension(file_path: str) -> str:
@@ -108,13 +108,11 @@ def read_file(file_path: str,
         return ''.join(lines)
 
 
-# todo: convert to generator
-# todo: rename to yield_...
-def get_file_paths(dir_path: str,
-                   allowed_file_extensions: Sequence[str],
-                   recursively: bool = False) -> Sequence[str]:
+def yield_file_paths(dir_path: str,
+                     allowed_file_extensions: Sequence[str],
+                     recursively: bool = False) -> Iterable[str]:
     """
-    List file paths.
+    Yield file paths.
 
     :param dir_path: path to the containing directory.
     :param allowed_file_extensions: file extensions to match against e.g. `['.abc', '.def']`.
@@ -122,24 +120,18 @@ def get_file_paths(dir_path: str,
     :return: file paths.
     """
 
-    def filter_allowed_file_paths(dp: str, fbs: Sequence[str], afe: Sequence[str]) -> Sequence[str]:
-        ps = []
+    def filter_allowed_file_paths(dp: str, fbs: Sequence[str], afe: Sequence[str]) -> Iterable[str]:
         for fb in fbs:
             p = os.path.join(dp, fb)
             if extract_file_name_and_extension(p).extension in afe:
-                ps.append(p)
-        return ps
-
-    file_paths = []
+                yield p
 
     if recursively:
         for root_dir_path, _, file_basenames in os.walk(dir_path):
-            file_paths = filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
+            yield from filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
     else:
         file_basenames = os.listdir(dir_path)
-        file_paths = filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
-
-    return file_paths
+        yield from filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
 
 
 def create_or_update_file(file_path: str,
