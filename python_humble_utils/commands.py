@@ -84,7 +84,7 @@ def generate_random_file_name_with_extension(file_extension: str) -> str:
     """
     Generate random file name with the extension specified.
 
-    :param file_extension: file name extension.
+    :param file_extension: file name extensionm e.g. `.ext`.
     :return: file name with the extension.
     """
     return "{}{}".format(generate_hex_uuid_4(), file_extension)
@@ -117,7 +117,7 @@ def get_file_paths(dir_path: str,
     List file paths.
 
     :param dir_path: path to the containing directory.
-    :param allowed_file_extensions: file extensions to match against.
+    :param allowed_file_extensions: file extensions to match against e.g. `['.abc', '.def']`.
     :param recursively: whether or not the directory is to be recursively traversed.
     :return: file paths.
     """
@@ -150,7 +150,7 @@ def create_or_update_file(file_path: str,
 
     :param file_path: path to the file.
     :param file_content: file content.
-    :param file_content_encoding: file content encoding.
+    :param file_content_encoding: file content encoding e.g. `latin-1`.
     """
     with open(file_path, 'wb+') as file:
         file.write(file_content.encode(file_content_encoding))
