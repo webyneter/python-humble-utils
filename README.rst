@@ -48,10 +48,9 @@ Python utils for everyday use.
 Feature Areas
 -------------
 
-* File system:
-    * file/directory paths extraction;
-    * file/directory paths randomization;
-    * file operations.
+* File operations.
+* File/directory paths extraction.
+* File/directory paths randomization.
 * String case convertions.
 * Python class convenience shortcuts.
 * `py.test`_ fixtures and helpers.
