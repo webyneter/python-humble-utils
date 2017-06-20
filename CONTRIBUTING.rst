@@ -1,5 +1,7 @@
 .. highlight:: shell
 
+.. _contributing:
+
 ============
 Contributing
 ============
@@ -7,7 +9,7 @@ Contributing
 Contributions are welcome, and they are greatly appreciated! Every
 little bit helps, and credit will always be given.
 
-You can contribute in many ways.
+
 
 Ways to Contribute
 ------------------
@@ -17,11 +19,16 @@ Report Bugs
 
 Report bugs at https://github.com/webyneter/python_humble_utils/issues complying with the project's issue template.
 
-Fix Bugs
-~~~~~~~~
 
-Look through the GitHub issues for bugs. Anything tagged with `bug`
-and `help wanted` is open to whoever wants to implement it.
+Fix Bugs via PRs
+~~~~~~~~~~~~~~~~
+
+Look through the GitHub issues: Anything tagged with `bug` and `help wanted` is open to whoever wants to implement it.
+
+Make sure to submit clean, concise, well-tested PRs only, so it is easier for contributors to review it;
+strive to deliver as short and atomic PRs as possible as this will dramatically increase the likelihood of it
+being merged.
+
 
 Implement Features
 ~~~~~~~~~~~~~~~~~~
@@ -29,11 +36,13 @@ Implement Features
 Look through the GitHub issues for features. Anything tagged with `enhancement`
 and `help wanted` is open to whoever wants to implement it.
 
+
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
 `python-humble-utils` could always use more documentation, whether as part of the
 official docs, in docstrings, or even on the web in blog posts, articles, and such.
+
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
@@ -47,52 +56,54 @@ If you are proposing a feature:
 * Remember that this is a volunteer-driven project, and that contributions
   are welcome!
 
+
+
 Get Started!
 ------------
 
 Ready to contribute? Here's how to set up `python_humble_utils` for local development.
 
-1. Fork us on GitHub.
-2. Clone the fork locally::
+#. Fork us on GitHub.
+#. Clone the fork locally::
 
     $ git clone git@github.com:<your username>/python_humble_utils.git
 
-3. Install your local copy into a virtualenv. Assuming you have `virtualenvwrapper` installed, this is how you set up the fork for local development::
+#. Install your local copy into a `virtualenv`_. Assuming you have `virtualenvwrapper`_ installed, this is how you set up the local development::
 
     $ mkvirtualenv python_humble_utils
-    $ cd ./python_humble_utils
+    $ cd <fork root directory path>
     $ setvirtualenvproject
     $ python setup.py develop
 
-4. Create a branch for local development::
+#. Create a branch for local development::
 
-    $ git checkout -b name-of-your-bugfix-or-feature
+    $ git checkout -b <issue id>-<issue title>
 
-   Now you can make your changes locally.
+#. When you are done making changes to the local branch, ensure tests pass via `tox`::
 
-5. When you are done making changes, ensure tests pass via `tox`::
+    $ make tox
 
-    $ tox
-
-6. Commit the changes and push your branch to GitHub::
+#. Commit the changes and push your branch to GitHub::
 
     $ git add .
     $ git commit -m "Your detailed description of your changes."
-    $ git push origin name-of-your-bugfix-or-feature
+    $ git push origin <issue id>-<issue title>
 
-7. Submit a pull request through the GitHub website.
+#. Submit a pull request through the GitHub website or any git GUI tool you prefer.
+
+.. _`virtualenv`: https://virtualenv.pypa.io/en/stable/
+.. _`virtualenvwrapper`: https://virtualenvwrapper.readthedocs.io/en/stable/
+
 
 Pull Request Guidelines
 -----------------------
 
-Before you submit a pull request, check that it meets these guidelines:
+Upon submition, make sure the PR meets these guidelines:
 
-1. The pull request should include tests.
-2. If the pull request adds functionality, the docs should be updated. Put
-   your new functionality into a function with a docstring, and add the
-   feature to the list in README.rst.
-3. Check https://travis-ci.org/webyneter/python_humble_utils/pull_requests
-   and make sure that the tests pass for all supported Python versions.
+#. the PR does not decrease code coverage (unless there is a very specific reason to);
+#. the docs (both programmatic and manual) are updated, if needed.
+
+
 
 Tips
 ----
