@@ -17,6 +17,10 @@ Python Humble Utils
     :target: https://travis-ci.org/webyneter/python_humble_utils
     :alt: Travis CI
 
+.. image:: https://codecov.io/gh/webyneter/python-humble-utils/branch/master/graph/badge.svg?token=NBiWMpI4Zt
+    :target: https://codecov.io/gh/webyneter/python-humble-utils
+    :alt: codecov
+
 .. image:: https://pyup.io/repos/github/webyneter/python-humble-utils/shield.svg?token=7d438c38-7622-4513-83bc-003209eb3619
     :target: https://pyup.io/repos/github/webyneter/python-humble-utils/
     :alt: Updates
