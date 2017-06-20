@@ -25,7 +25,7 @@ you through the process.
 From Sources
 ------------
 
-The sources for `python-humble-utils` can be downloaded from the `Github repo`_.
+`python-humble-utils` sources can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 

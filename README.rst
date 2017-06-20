@@ -1,7 +1,6 @@
 Python Humble Utils
 ===================
 
-
 .. image:: https://img.shields.io/pypi/v/python_humble_utils.svg
     :target: https://pypi.python.org/pypi/python_humble_utils
     :alt: PyPI
@@ -43,6 +42,7 @@ Python utils for everyday use.
 .. _`open issues`: https://github.com/webyneter/python_humble_utils/issues/new
 
 
+
 Feature Areas
 -------------
 
@@ -57,10 +57,12 @@ Feature Areas
 .. _py.test: https://docs.pytest.org/en/stable/
 
 
+
 Contributing
 ------------
 
 Your contributions are very much welcome! Refer to :ref:`contributing` for detailed instructions.
+
 
 
 Code of Conduct
@@ -69,6 +71,7 @@ Code of Conduct
 All those using `python-humble-utils`, including its codebase and project management ecosystem are expected to follow the `Python Community Code of Conduct`_.
 
 .. _`Python Community Code of Conduct`: https://www.python.org/psf/codeofconduct/
+
 
 
 Credits
