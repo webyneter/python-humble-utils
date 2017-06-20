@@ -174,6 +174,18 @@ def test_when_converting_camel_or_pascal_case_to_snake_case_given_valid_argument
     assert camel_or_pascal_case_to_snake_case(s) == expected
 
 
+@pytest.mark.parametrize('s,expected', [
+    ('iAmASTRANGECamelCase',
+     'i Am ASTRANGE Camel Case'),
+    ('YetAnotherOneBUTNOWWhilebeingastrangeOneIamStillAProperPascalCase',
+     'Yet Another One BUTNOW Whilebeingastrange One Iam Still A Proper Pascal Case'),
+])
+def test_when_converting_camel_or_pascal_case_to_space_delimited_given_valid_arguments_should_succeed(s: str,
+                                                                                                      expected: str):
+    actual = camel_or_pascal_case_to_space_delimited(s)
+    assert actual == expected
+
+
 def test_when_getting_all_subclasses_given_no_subclasses_should_succeed():
     assert set(get_all_subclasses(Moo, False)) == set()
     assert set(get_all_subclasses(Moo, True)) == {Moo}
@@ -185,15 +197,3 @@ def test_when_getting_all_subclasses_given_self_included_should_succeed():
 
 def test_when_getting_all_subclasses_given_self_excluded_should_succeed():
     assert set(get_all_subclasses(Foo, False)) == {Boo, Moo}
-
-
-@pytest.mark.parametrize('s,expected', [
-    ('iAmASTRANGECamelCase',
-     'i Am ASTRANGE Camel Case'),
-    ('YetAnotherOneBUTNOWWhilebeingastrangeOneIamStillAProperPascalCase',
-     'Yet Another One BUTNOW Whilebeingastrange One Iam Still A Proper Pascal Case'),
-])
-def test_when_converting_camel_or_pascal_case_to_space_delimited_given_valid_arguments_should_succeed(s: str,
-                                                                                                      expected: str):
-    actual = camel_or_pascal_case_to_space_delimited(s)
-    assert actual == expected
