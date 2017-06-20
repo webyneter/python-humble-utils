@@ -1,6 +1,6 @@
 .. highlight:: shell
 
-.. project-makefile:
+.. _project-makefile:
 
 Project Makefile
 ================

@@ -41,7 +41,7 @@ Python utils for everyday use.
 * Please, `open issues`_ before sending emails to the maintainers: You will get a much faster response!
 
 .. _`open issues`: https://github.com/webyneter/python_humble_utils/issues/new
-.. _`Documentation`: https://python-humble-utils.readthedocs.io
+.. _`Documentation`: https://python-humble-utils.readthedocs.io/en/stable/
 
 
 
@@ -59,10 +59,50 @@ Feature Areas
 
 
 
-Acknowledgements
-----------------
+Installation
+------------
 
-Your contributions are very much welcome! Refer to :ref:`contributing` for detailed instructions.
+Refer to :ref:`installation`.
+
+.. _`documentation`: https://python-humble-utils.readthedocs.io/en/stable/
+
+
+Usage
+-----
+
+.. code-block:: python
+
+    import os
+
+    from  python_humble_utils.commands import (
+        yield_file_paths,
+        camel_or_pascal_case_to_snake_case
+    )
+
+
+    # ...
+
+
+    file_paths = yield_file_paths(dir_path=os.path.join('path', 'to', 'dir'),
+                                  allowed_file_extensions=['.sh', '.bash'],
+                                  recursively=True)
+    # assert file_paths == ['s1.sh', 's2.bash', 's3.bash']
+
+    s = camel_or_pascal_case_to_snake_case('camelCasedString')
+    # assert s == 'camel_cased_string'
+
+    s = camel_or_pascal_case_to_snake_case('PascalCasedString')
+    # assert s == 'pascal_cased_string'
+
+
+    # ...
+
+
+
+Contributing
+------------
+
+Your contributions are very much welcome! For detailed instructions, refer to :ref:`contributing`.
 
 
 
@@ -75,8 +115,8 @@ All those using `python-humble-utils`, including its codebase and project manage
 
 
 
-Credits
--------
+Acknowledgements
+----------------
 
 This package was scaffolded via Cookiecutter_ with `audreyr/cookiecutter-pypackage`_ template.
 
