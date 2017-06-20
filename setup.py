@@ -57,7 +57,5 @@ setup(
         'utils',
         'helper',
         'helpers',
-        'command',
-        'commands',
     ],
 )
