@@ -2,7 +2,6 @@
 
 .. _contributing:
 
-============
 Contributing
 ============
 
@@ -17,11 +16,13 @@ Ways to Contribute
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/webyneter/python_humble_utils/issues complying with the project's issue template.
+`Create an issue`_ corresponding to the bug you have found complying with the project's issue template.
+
+.. _`Create an issue`: https://github.com/webyneter/python_humble_utils/issues
 
 
-Fix Bugs via PRs
-~~~~~~~~~~~~~~~~
+Fix Bugs
+~~~~~~~~
 
 Look through the GitHub issues: Anything tagged with `bug` and `help wanted` is open to whoever wants to implement it.
 
@@ -58,56 +59,42 @@ If you are proposing a feature:
 
 
 
-Get Started!
-------------
+Workflow
+--------
 
-Ready to contribute? Here's how to set up `python_humble_utils` for local development.
+See :ref:`developing-locally` for detailed instructions on setting up
+development environment.
 
-#. Fork us on GitHub.
-#. Clone the fork locally::
+Oncer you are all set up,
 
-    $ git clone git@github.com:<your username>/python_humble_utils.git
-
-#. Install your local copy into a `virtualenv`_. Assuming you have `virtualenvwrapper`_ installed, this is how you set up the local development::
-
-    $ mkvirtualenv python_humble_utils
-    $ cd <fork root directory path>
-    $ setvirtualenvproject
-    $ python setup.py develop
-
-#. Create a branch for local development::
+#. create a branch::
 
     $ git checkout -b <issue id>-<issue title>
 
-#. When you are done making changes to the local branch, ensure tests pass via `tox`::
+#. make the contribution;
 
-    $ make tox
+#. follow :ref:`developing-locally-tox` to run tests comprehensively;
 
-#. Commit the changes and push your branch to GitHub::
+#. commit changes to the branch::
 
     $ git add .
-    $ git commit -m "Your detailed description of your changes."
+    $ git commit -m "<detailed description of your changes>"
+
+#. push the branch to GitHub::
+
     $ git push origin <issue id>-<issue title>
 
-#. Submit a pull request through the GitHub website or any git GUI tool you prefer.
+#. submit a pull request via GitHub or any other git GUI tool you prefer.
 
 .. _`virtualenv`: https://virtualenv.pypa.io/en/stable/
 .. _`virtualenvwrapper`: https://virtualenvwrapper.readthedocs.io/en/stable/
 
 
-Pull Request Guidelines
------------------------
+
+Guidelines
+----------
 
 Upon submition, make sure the PR meets these guidelines:
 
 #. the PR does not decrease code coverage (unless there is a very specific reason to);
 #. the docs (both programmatic and manual) are updated, if needed.
-
-
-
-Tips
-----
-
-To run a subset of tests::
-
-    $ py.test python_humble_utils.tests.test_commands

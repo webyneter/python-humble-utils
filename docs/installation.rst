@@ -1,12 +1,11 @@
 .. highlight:: shell
 
-============
 Installation
 ============
 
 
-Stable release
---------------
+Latest Stable Release
+---------------------
 
 To install `python-humble-utils`, run this command in your terminal:
 
@@ -23,7 +22,7 @@ you through the process.
 .. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
 
 
-From sources
+From Sources
 ------------
 
 The sources for `python-humble-utils` can be downloaded from the `Github repo`_.

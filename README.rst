@@ -1,4 +1,3 @@
-===================
 Python Humble Utils
 ===================
 
@@ -39,6 +38,9 @@ Python Humble Utils
 Python utils for everyday use.
 
 * Documentation: https://python-humble-utils.readthedocs.io
+* Please, `open issues`_ before sending emails to the maintainers: You will get a much faster response!
+
+.. _`open issues`: https://github.com/webyneter/python_humble_utils/issues/new
 
 
 Feature Areas

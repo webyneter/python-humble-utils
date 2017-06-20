@@ -1,5 +1,5 @@
-Welcome to Python Humble Utils's documentation!
-===============================================
+Python Humble Utils Documentation
+=================================
 
 Contents:
 
@@ -11,6 +11,8 @@ Contents:
    usage
    modules
    contributing
+   developing-locally
+   project-makefile
    authors
    history
 
