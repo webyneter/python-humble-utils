@@ -13,14 +13,6 @@ Python Humble Utils
     :target: https://pypi.python.org/pypi/python-humble-utils
     :alt: Supported Python Versions
 
-.. image:: https://readthedocs.org/projects/python-humble-utils/badge/?version=latest
-    :target: http://python-humble-utils.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
-
-.. image:: https://img.shields.io/badge/License-MIT-green.svg
-    :target: https://opensource.org/licenses/MIT
-    :alt: MIT License
-
 .. image:: https://pyup.io/repos/github/webyneter/python-humble-utils/shield.svg
     :target: https://pyup.io/repos/github/webyneter/python-humble-utils/
     :alt: Updates
@@ -29,11 +21,13 @@ Python Humble Utils
     :target: https://codecov.io/gh/webyneter/python-humble-utils
     :alt: Coverage
 
+.. image:: https://readthedocs.org/projects/python-humble-utils/badge/?version=latest
+    :target: http://python-humble-utils.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
-.. TODO: gitter
-.. TODO: https://github.com/probot/stale
-.. TODO: https://github.com/danger/danger
-
+.. image:: https://img.shields.io/badge/License-MIT-green.svg
+    :target: https://opensource.org/licenses/MIT
+    :alt: MIT License
 
 Python utils for everyday use.
 
