@@ -49,7 +49,7 @@ Feature Areas
 * Python class convenience shortcuts.
 * `py.test`_ fixtures and helpers.
 
-.. _py.test: https://docs.pytest.org/en/stable/
+.. _`py.test`: https://docs.pytest.org/en/stable/
 
 
 
@@ -66,9 +66,9 @@ or install from sources:
 
     $ python setup.py install
 
-Refer to Installation for detailed instructions.
+Refer to `Installation`_ for detailed instructions.
 
-.. TODO Refer to :ref:`installation`.
+.. _`Installation`: https://python-humble-utils.readthedocs.io/en/stable/installation.html
 
 
 Usage
@@ -105,7 +105,9 @@ Usage
 Contributing
 ------------
 
-Your contributions are very much welcome! Refer to :ref:`contributing` for more details.
+Your contributions are very much welcome! Refer to `Contributing`_ for more details.
+
+.. _`Contributing`: https://python-humble-utils.readthedocs.io/en/stable/contributing.html
 
 
 
@@ -121,8 +123,8 @@ All those using `python-humble-utils`, including its codebase and project manage
 Acknowledgements
 ----------------
 
-This package was scaffolded via Cookiecutter_ with `audreyr/cookiecutter-pypackage`_ template.
+This package was scaffolded via `Cookiecutter`_ with `audreyr/cookiecutter-pypackage`_ template.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 
