@@ -1,39 +1,33 @@
 Python Humble Utils
 ===================
 
-.. image:: https://img.shields.io/pypi/v/python_humble_utils.svg
-    :target: https://pypi.python.org/pypi/python_humble_utils
-    :alt: PyPI
+.. image:: https://travis-ci.org/webyneter/python-humble-utils.svg?branch=master
+    :target: https://travis-ci.org/webyneter/python-humble-utils
+    :alt: Build Status
 
-.. TODO .. image:: https://img.shields.io/pypi/status/python_humble_utils.svg
-    :target:
-    :alt:
+.. image:: https://badge.fury.io/py/python-humble-utils.svg
+    :target: https://pypi.python.org/pypi/python-humble-utils
+    :alt: Latest Version
 
-.. TODO .. image:: https://img.shields.io/pypi/pyversions/python_humble_utils.svg
-    :target:
-    :alt:
+.. image:: https://img.shields.io/pypi/pyversions/python-humble-utils.svg
+    :target: https://pypi.python.org/pypi/python-humble-utils
+    :alt: Supported Python Versions
 
-.. image:: https://img.shields.io/travis/webyneter/python_humble_utils.svg
-    :target: https://travis-ci.org/webyneter/python_humble_utils
-    :alt: Travis CI
+.. image:: https://codecov.io/gh/webyneter/python-humble-utils/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/webyneter/python-humble-utils
+    :alt: Coverage
 
-.. image:: https://pyup.io/repos/github/webyneter/python_humble_utils/shield.svg
-    :target: https://pyup.io/repos/github/webyneter/python_humble_utils/
-    :alt: pyup.io
+.. image:: https://pyup.io/repos/github/webyneter/python-humble-utils/shield.svg
+    :target: https://pyup.io/repos/github/webyneter/python-humble-utils/
+    :alt: Updates
 
 .. image:: https://readthedocs.org/projects/python-humble-utils/badge/?version=latest
-    :target: https://python-humble-utils.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation
+    :target: http://python-humble-utils.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 .. image:: https://img.shields.io/badge/License-MIT-green.svg
     :target: https://opensource.org/licenses/MIT
-    :alt: License: MIT
-
-.. TODO: gitter
-.. TODO: codecov
-.. TODO: https://github.com/probot/stale
-.. TODO: https://github.com/danger/danger
-
+    :alt: MIT License
 
 Python utils for everyday use.
 
