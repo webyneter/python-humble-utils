@@ -2,7 +2,7 @@
 deploy:
   true:
     python: 3.5
-    repo: webyneter/python_humble_utils
+    repo: webyneter/python-humble-utils
     tags: true
   user: webyneter
   password:
