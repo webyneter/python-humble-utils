@@ -6,47 +6,44 @@ Installation
 ============
 
 
-Latest Stable Release
----------------------
+From PyPI
+---------
 
-To install `python-humble-utils`, run this command in your terminal:
+To install the latest release, run
 
 .. code-block:: console
 
     $ pip install python-humble-utils
 
-This is the preferred method, as it will always install the most recent stable release.
+Or, install a specific version via
+
+.. code-block:: console
+
+    $ pip install python-humble-utils==<version>
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
 
 .. _pip: https://pip.pypa.io
-.. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
+.. _Python installation guide: http://docs.python-guide.org/en/stable/starting/installation/
 
 
 From Sources
 ------------
 
-`python-humble-utils` sources can be downloaded from the `Github repo`_.
+#. Obtain sources
 
-You can either clone the public repository:
+    * cloning the repository::
 
-.. code-block:: console
+        $ git clone git://github.com/webyneter/python-humble-utils
 
-    $ git clone git://github.com/webyneter/python-humble-utils
+    * or, downloading a `tarball`_::
 
-Or download the `tarball`_:
+        $ curl -OL https://github.com/webyneter/python-humble-utils/tarball/master
 
-.. code-block:: console
-
-    $ curl -OL https://github.com/webyneter/python-humble-utils/tarball/master
-
-Once you have a copy of the source, you can install it with:
-
-.. code-block:: console
+#. Install via::
 
     $ python setup.py install
-
 
 .. _Github repo: https://github.com/webyneter/python-humble-utils
 .. _tarball: https://github.com/webyneter/python-humble-utils/tarball/master

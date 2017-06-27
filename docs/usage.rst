@@ -1,8 +1,6 @@
 Usage
 =====
 
-To use `python-humble-utils` in your project,
-
 .. code-block:: python
 
     import os
