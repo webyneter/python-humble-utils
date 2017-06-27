@@ -3,25 +3,32 @@ Python Humble Utils
 
 .. image:: https://travis-ci.org/webyneter/python-humble-utils.svg?branch=master
     :target: https://travis-ci.org/webyneter/python-humble-utils
+    :alt: Build Status
 
 .. image:: https://badge.fury.io/py/python-humble-utils.svg
     :target: https://pypi.python.org/pypi/python-humble-utils
+    :alt: Latest Version
 
 .. image:: https://img.shields.io/pypi/pyversions/python-humble-utils.svg
     :target: https://pypi.python.org/pypi/python-humble-utils
+    :alt: Supported Python Versions
 
 .. image:: https://readthedocs.org/projects/python-humble-utils/badge/?version=latest
     :target: http://python-humble-utils.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 .. image:: https://img.shields.io/badge/License-MIT-green.svg
     :target: https://opensource.org/licenses/MIT
-
+    :alt: MIT License
 
 .. image:: https://pyup.io/repos/github/webyneter/python-humble-utils/shield.svg
     :target: https://pyup.io/repos/github/webyneter/python-humble-utils/
+    :alt: Updates
 
-.. image:: https://codecov.io/gh/webyneter/python-humble-utils/branch/master/graph/badge.svg?token=NBiWMpI4Zt
+.. image:: https://codecov.io/gh/webyneter/python-humble-utils/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/webyneter/python-humble-utils
+    :alt: Coverage
+
 
 .. TODO: gitter
 .. TODO: https://github.com/probot/stale
