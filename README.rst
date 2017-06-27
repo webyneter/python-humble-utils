@@ -13,13 +13,13 @@ Python Humble Utils
     :target: https://pypi.python.org/pypi/python-humble-utils
     :alt: Supported Python Versions
 
-.. image:: https://pyup.io/repos/github/webyneter/python-humble-utils/shield.svg
-    :target: https://pyup.io/repos/github/webyneter/python-humble-utils/
-    :alt: Updates
-
 .. image:: https://codecov.io/gh/webyneter/python-humble-utils/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/webyneter/python-humble-utils
     :alt: Coverage
+
+.. image:: https://pyup.io/repos/github/webyneter/python-humble-utils/shield.svg
+    :target: https://pyup.io/repos/github/webyneter/python-humble-utils/
+    :alt: Updates
 
 .. image:: https://readthedocs.org/projects/python-humble-utils/badge/?version=latest
     :target: http://python-humble-utils.readthedocs.io/en/latest/?badge=latest
