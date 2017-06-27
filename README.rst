@@ -1,13 +1,8 @@
 Python Humble Utils
 ===================
 
-.. image:: https://img.shields.io/pypi/v/python_humble_utils.svg
-    :target: https://pypi.python.org/pypi/python_humble_utils
-    :alt: PyPI
-
-.. TODO .. image:: https://img.shields.io/pypi/status/python_humble_utils.svg
-    :target:
-    :alt:
+.. image:: https://badge.fury.io/py/python-humble-utils.svg
+    :target: https://badge.fury.io/py/python-humble-utils
 
 .. TODO .. image:: https://img.shields.io/pypi/pyversions/python_humble_utils.svg
     :target:
