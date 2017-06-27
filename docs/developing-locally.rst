@@ -60,8 +60,8 @@ into ``./requirements/*.in`` files.
 
 .. _developing-locally-tox:
 
-Running ``tox`` with Multiple Python Distributions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running `tox` with Multiple Python Distributions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Running ``tox`` locally requires a number of Python distributions to be available,
 which is a challenge, to say the least. `pyenv`_ helps overcome this major obstacle.

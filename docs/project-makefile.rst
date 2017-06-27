@@ -9,11 +9,8 @@ To facilitate smooth development worflow, we provide a ``Makefile``
 defining a number of convenience commands.
 
 * ``clean`` running
-
     #. ``clean-build`` (build artifact removal);
-
     #. ``clean-pyc`` (compilation artifact removal);
-
     #. ``clean-test`` (test and coverage artifact removal).
 
     Specifically::
