@@ -45,7 +45,7 @@ Feature Areas
 * File operations.
 * File/directory paths extraction.
 * File/directory paths randomization.
-* String case convertions.
+* String case conversions.
 * Python class convenience shortcuts.
 * `py.test`_ fixtures and helpers.
 
@@ -114,7 +114,7 @@ Your contributions are very much welcome! Refer to `Contributing`_ for more deta
 Code of Conduct
 ---------------
 
-All those using `python-humble-utils`, including its codebase and project management ecosystem are expected to follow the `Python Community Code of Conduct`_.
+All those using ``python-humble-utils``, including its codebase and project management ecosystem are expected to follow the `Python Community Code of Conduct`_.
 
 .. _`Python Community Code of Conduct`: https://www.python.org/psf/codeofconduct/
 
