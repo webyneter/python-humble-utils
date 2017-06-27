@@ -64,8 +64,6 @@ Installation
 
 Refer to :ref:`installation`.
 
-.. _`documentation`: https://python-humble-utils.readthedocs.io/en/stable/
-
 
 Usage
 -----
@@ -74,7 +72,7 @@ Usage
 
     import os
 
-    from python_humble_utils.commands import (
+    from  python_humble_utils.commands import (
         yield_file_paths,
         camel_or_pascal_case_to_snake_case
     )
@@ -83,10 +81,10 @@ Usage
     # ...
 
 
-    file_paths = yield_file_paths(dir_path=os.path.join('path', 'to', 'dir'),
+    file_paths = yield_file_paths(dir_path=os.path.join('dir', 'with', 'scripts'),
                                   allowed_file_extensions=['.sh', '.bash'],
                                   recursively=True)
-    # assert file_paths == ['s1.sh', 's2.bash', 's3.bash']
+    # assert set(file_paths) == set(['s1.sh', 's2.bash', 's3.bash'])
 
     s = camel_or_pascal_case_to_snake_case('camelCasedString')
     # assert s == 'camel_cased_string'
@@ -96,7 +94,6 @@ Usage
 
 
     # ...
-
 
 
 Contributing
