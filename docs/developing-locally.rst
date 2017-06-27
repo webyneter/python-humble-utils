@@ -13,7 +13,7 @@ Environment Setup
 
 #. Clone your fork locally::
 
-    $ git clone git@github.com:<your username>/python_humble_utils.git
+    $ git clone git@github.com:<your username>/python-humble-utils.git
 
 #. Create a `virtualenv`_; assuming you have `virtualenvwrapper`_ installed, this is how you do it::
 
@@ -26,7 +26,7 @@ Environment Setup
     $ python setup.py develop
 
 
-.. _`GitHub`: https://github.com/webyneter/python_humble_utils/
+.. _`GitHub`: https://github.com/webyneter/python-humble-utils/
 .. _`virtualenv`: https://virtualenv.pypa.io/en/stable/
 .. _`virtualenvwrapper`: https://virtualenvwrapper.readthedocs.io/en/stable/
 

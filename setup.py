@@ -14,9 +14,9 @@ setup_requirements = [
 
 
 setup(
-    name='python_humble_utils',
+    name='python-humble-utils',
     version='0.1.0',
-    url='https://github.com/webyneter/python_humble_utils',
+    url='https://github.com/webyneter/python-humble-utils',
 
     description="Python utils for everyday use.",
     long_description=readme + '\n\n' + history,

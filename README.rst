@@ -64,7 +64,7 @@ Installation
 
 .. code-block:: console
 
-    $ pip install python_humble_utils
+    $ pip install python-humble-utils
 
 or install from sources:
 
@@ -84,7 +84,7 @@ Usage
 
     import os
 
-    from  python_humble_utils.commands import (
+    from python_humble_utils.commands import (
         yield_file_paths,
         camel_or_pascal_case_to_snake_case
     )

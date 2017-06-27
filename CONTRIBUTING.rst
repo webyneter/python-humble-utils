@@ -18,7 +18,7 @@ Report Bugs
 
 `Create an issue`_ corresponding to the bug you have found complying with the project's issue template.
 
-.. _`Create an issue`: https://github.com/webyneter/python_humble_utils/issues
+.. _`Create an issue`: https://github.com/webyneter/python-humble-utils/issues
 
 
 Fix Bugs
@@ -48,7 +48,7 @@ official docs, in docstrings, or even on the web in blog posts, articles, and su
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/webyneter/python_humble_utils/issues.
+The best way to send feedback is to file an issue at https://github.com/webyneter/python-humble-utils/issues.
 
 If you are proposing a feature:
 
