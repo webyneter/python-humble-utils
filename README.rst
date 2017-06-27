@@ -62,7 +62,19 @@ Feature Areas
 Installation
 ------------
 
-Refer to :ref:`installation`.
+.. code-block:: console
+
+    $ pip install python_humble_utils
+
+or install from sources:
+
+.. code-block:: console
+
+    $ python setup.py install
+
+Refer to Installation for detailed instructions.
+
+.. TODO Refer to :ref:`installation`.
 
 
 Usage
@@ -99,7 +111,7 @@ Usage
 Contributing
 ------------
 
-Your contributions are very much welcome! For detailed instructions, refer to :ref:`contributing`.
+Your contributions are very much welcome! Refer to :ref:`contributing` for more details.
 
 
 
