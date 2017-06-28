@@ -60,7 +60,7 @@ defining a number of convenience commands.
 
     $ make install
 
-* ``requirements`` proxying the ``./requirements/Makefile`` (see ``./Makefile`` help for more info).
+* ``sync`` allowing to keep local environment in sync with development dependencies.
 
 .. _`PEP8`: https://www.python.org/dev/peps/pep-0008/
 .. _`flake8`: http://flake8.pycqa.org/en/stable/
