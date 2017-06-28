@@ -39,23 +39,11 @@ Scenarios
 Updating Requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
-To keep your environment in sync with project requirements, `pip-tools`_ is utilized.
+Project requirements must be declared and pinned in the appropriate ``./requirements/*.txt`` files.
 
-Project requirements must be declared and pinned in the appropriate ``./requirements/*.in`` files.
-They are then compiled to ``./requirements/*.txt`` files on command.
-Note that the requirement hierarchy is maintained through relative imports of ``./requirements/*.txt`` files
-into ``./requirements/*.in`` files.
+To install/upgrade/uninstall dependencies into/in/from the environment::
 
-#. When adding/upgrading/removing a dependency to/in/from the specific ``*.in`` file, the respective ``*.txt`` file must be updated as well::
-
-    $ make requirements
-
-#. To install/upgrade/uninstall dependencies into/in/from the environment::
-
-    $ make requirements proxy=sync_development
-
-
-.. _`pip-tools`: https://github.com/jazzband/pip-tools
+    $ make sync
 
 
 .. _developing-locally-tox:
