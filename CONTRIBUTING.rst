@@ -67,8 +67,7 @@ If you are proposing a feature,
 Workflow
 --------
 
-See :ref:`developing-locally` for detailed instructions on setting up
-development environment.
+See :ref:`developing-locally` for detailed instructions on setting up local environment.
 
 Oncer you are all set up,
 
