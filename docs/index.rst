@@ -7,9 +7,9 @@ Contents:
    :maxdepth: 2
 
    readme
+   modules
    installation
    usage
-   modules
    contributing
    developing-locally
    project-makefile
