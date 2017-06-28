@@ -1,11 +1,5 @@
--r ./base.txt
--r ./test.txt
-
 ipython==6.1.0
 bumpversion==0.5.3
-
-Sphinx==1.6.2
 watchdog==0.8.3
-
 cryptography==1.9
 PyYAML==3.12

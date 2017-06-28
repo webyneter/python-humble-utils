@@ -62,7 +62,10 @@ defining a number of convenience commands.
 
     $ make install
 
-* ``sync`` allowing to keep local environment in sync with development dependencies.
+* ``synclocal`` keeping local environment dependencies in sync with those declared in ``local.txt``::
+
+    $ make synclocal
+
 
 .. _`PEP8`: https://www.python.org/dev/peps/pep-0008/
 .. _`flake8`: http://flake8.pycqa.org/en/stable/
