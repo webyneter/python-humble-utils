@@ -62,12 +62,7 @@ defining a number of convenience commands.
 
     $ make install
 
-* ``requirements`` proxying the ``./requirements/Makefile``::
-
-    $ make requirements
-    $ make requirements proxy=all
-    $ make requirements proxy='check_pip_tools all'
-
+* ``sync`` allowing to keep local environment in sync with development dependencies.
 
 .. _`PEP8`: https://www.python.org/dev/peps/pep-0008/
 .. _`flake8`: http://flake8.pycqa.org/en/stable/

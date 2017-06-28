@@ -1,4 +1,4 @@
-.PHONY: help docs requirements clean clean-test clean-pyc clean-build
+.PHONY: help docs sync clean clean-test clean-pyc clean-build
 .DEFAULT_GOAL := help
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
@@ -25,13 +25,6 @@ BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
-	@echo ''
-	@echo 'requirements  Proxy command(s) to the requirements Makefile, e.g.'
-	@echo '              $$ make requirements'
-	@echo '              or'
-	@echo '              $$ make requirements proxy=<command>'
-	@echo '              or'
-	@echo "              $$ make requirements proxy='<command1> ... <commandN>'"
 
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
@@ -93,5 +86,6 @@ dist: clean ## builds source and wheel package
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
 
-requirements:
-	make --directory=./requirements $(proxy)
+sync:
+	[ -z "$(pip freeze)" ] || pip freeze | xargs pip uninstall -y
+	pip install -r ./requirements/development.txt
