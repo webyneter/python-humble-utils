@@ -15,7 +15,7 @@ Environment Setup
 
     $ git clone git@github.com:<your username>/python-humble-utils.git
 
-#. Create a `virtualenv`_; assuming you have `virtualenvwrapper`_ installed, this is how you do it::
+#. Create a `virtualenv`_ ; assuming you have `virtualenvwrapper`_ installed, this is how you do it::
 
     $ mkvirtualenv python_humble_utils
     $ cd <cloned project root>
@@ -41,12 +41,12 @@ Updating Requirements
 
 To keep your environment in sync with project requirements, `pip-tools`_ is utilized.
 
-Project requirements must be declared and pinned in the appropriate `./requirements/*.in` files.
-They are then compiled to `./requirements/*.txt` files on command.
-Note that the requirement hierarchy is maintained through relative imports of `./requirements/*.txt` files
-into `./requirements/*.in` files.
+Project requirements must be declared and pinned in the appropriate ``./requirements/*.in`` files.
+They are then compiled to ``./requirements/*.txt`` files on command.
+Note that the requirement hierarchy is maintained through relative imports of ``./requirements/*.txt`` files
+into ``./requirements/*.in`` files.
 
-#. When adding/upgrading/removing a dependency to/in/from the specific `*.in` file, the respective `*.txt` file must be updated as well::
+#. When adding/upgrading/removing a dependency to/in/from the specific ``*.in`` file, the respective ``*.txt`` file must be updated as well::
 
     $ make requirements
 
@@ -60,17 +60,17 @@ into `./requirements/*.in` files.
 
 .. _developing-locally-tox:
 
-Running `tox` with Multiple Python Distributions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running ``tox`` with Multiple Python Distributions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Running `tox` locally requires a number of Python distributions to be available,
+Running ``tox`` locally requires a number of Python distributions to be available,
 which is a challenge, to say the least. `pyenv`_ helps overcome this major obstacle.
 
-#. Follow `pyenv installation instructions`_ to install `pyenv` system-wide.
+#. Follow `pyenv installation instructions`_ to install ``pyenv`` system-wide.
 
-#. Install all versions of Python the project is tested against by `tox` (see `./tox.ini`).
+#. Install all versions of Python the project is tested against by ``tox`` (see ``./tox.ini``).
 
-#. Run `tox`::
+#. Run ``tox``::
 
     $ make test-all
 

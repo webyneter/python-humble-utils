@@ -21,8 +21,8 @@ Python Humble Utils
     :target: https://pyup.io/repos/github/webyneter/python-humble-utils/
     :alt: Updates
 
-.. image:: https://readthedocs.org/projects/python-humble-utils/badge/?version=latest
-    :target: http://python-humble-utils.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/python-humble-utils/badge/?version=stable
+    :target: http://python-humble-utils.readthedocs.io/en/stable/?badge=stable
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/badge/License-MIT-green.svg

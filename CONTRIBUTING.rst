@@ -10,52 +10,56 @@ little bit helps, and credit will always be given.
 
 
 
-Ways to Contribute
-------------------
+Ways You Can Help Us
+--------------------
 
 Report Bugs
 ~~~~~~~~~~~
 
-`Create an issue`_ corresponding to the bug you have found complying with the project's issue template.
+`Create an issue`_ corresponding to the bug you have found complying with
+the project's issue template.
 
-.. _`Create an issue`: https://github.com/webyneter/python-humble-utils/issues
+.. _`Create an issue`: https://github.com/webyneter/python-humble-utils/issues/new
 
 
 Fix Bugs
 ~~~~~~~~
 
-Look through the GitHub issues: Anything tagged with `bug` and `help wanted` is open to whoever wants to implement it.
+Look through the GitHub issues: Anything tagged with ``bug`` and ``help wanted``
+is open to whoever wants to implement it.
 
-Make sure to submit clean, concise, well-tested PRs only, so it is easier for contributors to review it;
-strive to deliver as short and atomic PRs as possible as this will dramatically increase the likelihood of it
-being merged.
+Make sure to submit clean, concise, well-tested pull requests only, so it is easier
+for contributors to review it; strive to deliver as short and atomic pull requests
+as possible as this will dramatically increase the likelihood of those being merged.
 
 
 Implement Features
 ~~~~~~~~~~~~~~~~~~
 
-Look through the GitHub issues for features. Anything tagged with `enhancement`
-and `help wanted` is open to whoever wants to implement it.
+Look through the GitHub issues for features. Anything tagged with ``enhancement``
+and/or ``help wanted`` and/or without an ``Assignee`` is open to whoever
+wants to implement it.
 
 
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-`python-humble-utils` could always use more documentation, whether as part of the
-official docs, in docstrings, or even on the web in blog posts, articles, and such.
+We could always use more documentation, whether as part of the official docs,
+in docstrings, or even on the web in blog posts, articles, and such.
 
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/webyneter/python-humble-utils/issues.
+The best way to send feedback is to `file an issue`_.
 
-If you are proposing a feature:
+.. _`file an issue`: https://github.com/webyneter/python-humble-utils/issues/new
 
-* Explain in detail how it would work.
-* Keep the scope as narrow as possible, to make it easier to implement.
-* Remember that this is a volunteer-driven project, and that contributions
-  are welcome!
+If you are proposing a feature,
+
+* explain in detail how it would work;
+* keep the scope as narrow as possible, to make it easier to implement;
+* remember that this is a volunteer-driven project, so contributions are welcome!
 
 
 
@@ -94,7 +98,7 @@ Oncer you are all set up,
 Guidelines
 ----------
 
-Upon submition, make sure the PR meets these guidelines:
+Upon submission, make sure the PR meets these guidelines:
 
 #. the PR does not decrease code coverage (unless there is a very specific reason to);
 #. the docs (both programmatic and manual) are updated, if needed.
