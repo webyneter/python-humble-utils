@@ -5,6 +5,8 @@
 Project Makefile
 ================
 
+.. include:: ./includes/execution_context_notice.rst
+
 To facilitate smooth development worflow, we provide a ``Makefile``
 defining a number of convenience commands.
 

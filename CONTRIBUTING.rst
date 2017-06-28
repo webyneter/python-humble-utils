@@ -8,6 +8,7 @@ Contributing
 Contributions are welcome, and they are greatly appreciated! Every
 little bit helps, and credit will always be given.
 
+.. include:: ./includes/execution_context_notice.rst
 
 
 Ways You Can Help Us
@@ -25,7 +26,7 @@ the project's issue template.
 Fix Bugs
 ~~~~~~~~
 
-Look through the GitHub issues: Anything tagged with ``bug`` and ``help wanted``
+Look through the GitHub issues: Anything tagged with ``bug`` and without an ``Assignee``
 is open to whoever wants to implement it.
 
 Make sure to submit clean, concise, well-tested pull requests only, so it is easier

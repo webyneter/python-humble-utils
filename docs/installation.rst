@@ -5,6 +5,8 @@
 Installation
 ============
 
+.. include:: ./includes/execution_context_notice.rst
+
 
 From PyPI
 ---------
