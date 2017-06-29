@@ -2,10 +2,18 @@ History
 =======
 
 
+v1.0.1
+------
+
+`v1.0.1 <https://github.com/webyneter/python-humble-utils/releases/tag/v1.0.1>`_.
+
+* `Fix README not rendered properly on PyPI <https://github.com/webyneter/python-humble-utils/issues/43>`_.
+
+
 v1.0.0
 ------
 
-`Tag <https://github.com/webyneter/python-humble-utils/releases/tag/v1.0.0>`_.
+`v1.0.0 <https://github.com/webyneter/python-humble-utils/releases/tag/v1.0.0>`_.
 
 * `Bump package Development Status <https://github.com/webyneter/python-humble-utils/issues/18>`_.
 * `Test package deployment locally <https://github.com/webyneter/python-humble-utils/issues/11>`_.
@@ -17,7 +25,7 @@ v1.0.0
 v0.5.0
 ------
 
-`Tag <https://github.com/webyneter/python-humble-utils/releases/tag/v0.5.0>`_.
+`v0.5.0 <https://github.com/webyneter/python-humble-utils/releases/tag/v0.5.0>`_.
 
 * `Document python_humble_utils package <https://github.com/webyneter/python-humble-utils/issues/28>`_.
 * `Introduce local requirements <https://github.com/webyneter/python-humble-utils/issues/15>`_.
@@ -32,7 +40,7 @@ v0.5.0
 v0.4.0
 ------
 
-`Tag <https://github.com/webyneter/python-humble-utils/releases/tag/v0.4.0>`_.
+`v0.4.0 <https://github.com/webyneter/python-humble-utils/releases/tag/v0.4.0>`_.
 
 * `Support Python 3.6 <https://github.com/webyneter/python-humble-utils/issues/4>`_.
 
@@ -40,7 +48,7 @@ v0.4.0
 v0.3.0
 ------
 
-`Tag <https://github.com/webyneter/python-humble-utils/releases/tag/v0.3.0>`_.
+`v0.3.0 <https://github.com/webyneter/python-humble-utils/releases/tag/v0.3.0>`_.
 
 * `Setup ReadTheDocs <https://github.com/webyneter/python-humble-utils/issues/10>`_.
 
@@ -48,6 +56,6 @@ v0.3.0
 v0.2.0
 ------
 
-`Tag <https://github.com/webyneter/python-humble-utils/releases/tag/v0.2.0>`_.
+`v0.2.0 <https://github.com/webyneter/python-humble-utils/releases/tag/v0.2.0>`_.
 
 * First release on PyPI.
