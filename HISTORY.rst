@@ -2,6 +2,14 @@ History
 =======
 
 
+v1.0.1
+------
+
+`v1.0.1 <https://github.com/webyneter/python-humble-utils/releases/tag/v1.0.1>`_.
+
+* `Fix README not rendered properly on PyPI <https://github.com/webyneter/python-humble-utils/issues/43>`_.
+
+
 v1.0.0
 ------
 
