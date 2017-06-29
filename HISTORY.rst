@@ -10,6 +10,7 @@ v1.0.0
 * `Fill in HISTORY <https://github.com/webyneter/python-humble-utils/issues/35>`_.
 * `Bump package Development Status <https://github.com/webyneter/python-humble-utils/issues/18>`_.
 * `Test package deployment locally <https://github.com/webyneter/python-humble-utils/issues/11>`_.
+* `Add Gitter badge <https://github.com/webyneter/python-humble-utils/issues/20>`_.
 
 
 v0.5.0
