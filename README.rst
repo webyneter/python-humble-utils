@@ -5,14 +5,6 @@ Python Humble Utils
     :target: https://travis-ci.org/webyneter/python-humble-utils
     :alt: Build Status
 
-.. image:: https://badge.fury.io/py/python-humble-utils.svg
-    :target: https://pypi.python.org/pypi/python-humble-utils
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/pyversions/python-humble-utils.svg
-    :target: https://pypi.python.org/pypi/python-humble-utils
-    :alt: Supported Python Versions
-
 .. image:: https://codecov.io/gh/webyneter/python-humble-utils/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/webyneter/python-humble-utils
     :alt: Coverage
@@ -20,6 +12,10 @@ Python Humble Utils
 .. image:: https://pyup.io/repos/github/webyneter/python-humble-utils/shield.svg
     :target: https://pyup.io/repos/github/webyneter/python-humble-utils
     :alt: Updates
+
+.. image:: https://codeclimate.com/github/webyneter/python-humble-utils/badges/gpa.svg
+    :target: https://codeclimate.com/github/webyneter/python-humble-utils
+    :alt: Code Climate
 
 .. image:: https://readthedocs.org/projects/python-humble-utils/badge/?version=stable
     :target: http://python-humble-utils.readthedocs.io/en/stable/?badge=stable
@@ -29,9 +25,22 @@ Python Humble Utils
     :target: https://opensource.org/licenses/MIT
     :alt: MIT License
 
+|
+
+.. image:: https://badge.fury.io/py/python-humble-utils.svg
+    :target: https://pypi.python.org/pypi/python-humble-utils
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/pyversions/python-humble-utils.svg
+    :target: https://pypi.python.org/pypi/python-humble-utils
+    :alt: Supported Python Versions
+
+|
+
 .. image:: https://img.shields.io/gitter/room/webyneter/python-humble-utils.svg
     :target: https://gitter.im/webyneter/python-humble-utils?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
     :alt: Join the chat at https://gitter.im/webyneter/python-humble-utils
+
 
 Python utils for everyday use.
 

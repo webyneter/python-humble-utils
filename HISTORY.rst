@@ -2,6 +2,14 @@ History
 =======
 
 
+v1.0.2
+------
+
+`v1.0.2 <https://github.com/webyneter/python-humble-utils/releases/tag/v1.0.2>`_.
+
+* `Add Code Climate badge to README <https://github.com/webyneter/python-humble-utils/issues/45>`_.
+
+
 v1.0.1
 ------
 
