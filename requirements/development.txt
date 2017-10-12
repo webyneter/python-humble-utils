@@ -1,5 +1,5 @@
 ipython==6.2.1
 bumpversion==0.5.3
 watchdog==0.8.3
-cryptography==2.0.3
+cryptography==2.1
 PyYAML==3.12
