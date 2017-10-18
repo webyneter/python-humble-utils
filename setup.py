@@ -32,12 +32,6 @@ setup(
     setup_requires=setup_requirements,
     zip_safe=False,
 
-    entry_points={
-        'console_scripts': [
-            'python_humble_utils=python_humble_utils.cli:main'
-        ]
-    },
-
     license="MIT",
     classifiers=[
         'Development Status :: 5 - Production/Stable',
