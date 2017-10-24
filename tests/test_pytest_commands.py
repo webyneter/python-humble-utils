@@ -2,8 +2,8 @@ import os
 
 from pytest import raises
 
-from ..conftest import FileMeta
-from ..pytest_commands import generate_tmp_file_path
+from python_humble_utils.pytest_commands import generate_tmp_file_path
+from .conftest import FileMeta
 
 
 def test_when_generating_tmp_file_path_given_relative_tmp_dir_path_should_succeed(tmpdir_factory,
