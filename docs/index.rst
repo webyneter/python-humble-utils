@@ -7,7 +7,7 @@ Contents:
    :maxdepth: 2
 
    readme
-   modules
+   python_humble_utils
    installation
    usage
    contributing
