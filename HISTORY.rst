@@ -2,6 +2,18 @@ History
 =======
 
 
+v2.0.0
+------
+
+`v2.0.0 <https://github.com/webyneter/python-humble-utils/releases/tag/v2.0.0>`_.
+
+* `Move tests to the root <https://github.com/webyneter/python-humble-utils/issues/69>`_.
+* `Pick another naming scheme for tests <https://github.com/webyneter/python-humble-utils/issues/149>`_.
+* `Convert NamedTuple's to classes and document them <https://github.com/webyneter/python-humble-utils/issues/163>`_.
+* `Clean up docstrings <https://github.com/webyneter/python-humble-utils/issues/150>`_.
+* `Stop indexing tests in docs <https://github.com/webyneter/python-humble-utils/issues/161>`_.
+
+
 v1.0.4
 ------
 
