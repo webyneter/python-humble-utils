@@ -2,7 +2,7 @@ import os
 import re
 import uuid
 from ast import literal_eval
-from typing import NamedTuple, Sequence, Iterable
+from typing import Sequence, Iterable
 
 
 def extract_file_name_with_extension(file_path: str) -> str:
@@ -14,13 +14,18 @@ def extract_file_name_with_extension(file_path: str) -> str:
     return os.path.basename(file_path)
 
 
-NameAndExtension = NamedTuple('NameAndExtension', [
-    ('name', str),
-    ('extension', str)
-])
+class FileNameAndExtension:
+    """A container for file name and extension"""
+
+    def __init__(self,
+                 name: str,
+                 extension: str):
+        super().__init__()
+        self.name = name
+        self.extension = extension
 
 
-def extract_file_name_and_extension(file_path: str) -> NameAndExtension:
+def extract_file_name_and_extension(file_path: str) -> FileNameAndExtension:
     """Extract file name and extension as named tuple.
 
     :param file_path: path to the file.
@@ -28,7 +33,7 @@ def extract_file_name_and_extension(file_path: str) -> NameAndExtension:
     """
     name_with_extension = extract_file_name_with_extension(file_path)
     name, extension = os.path.splitext(name_with_extension)
-    return NameAndExtension(name, extension)
+    return FileNameAndExtension(name, extension)
 
 
 def extract_file_dir_path(file_path: str) -> str:

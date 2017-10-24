@@ -14,8 +14,8 @@ from python_humble_utils.commands import extract_file_name_with_extension, extra
     camel_or_pascal_case_to_space_delimited, generate_random_dir_path, yield_file_paths, generate_hex_uuid_4, \
     get_class_name, get_class_qualname
 from python_humble_utils.pytest_commands import generate_tmp_file_path
-from .conftest import FileMeta
 from .classes import Foo, Boo, Moo
+from .conftest import FileMeta
 
 
 def test_extract_file_name_with_extension(file_meta: FileMeta):
