@@ -2,6 +2,27 @@ History
 =======
 
 
+v1.0.4
+------
+
+`v1.0.4 <https://github.com/webyneter/python-humble-utils/releases/tag/v1.0.4>`_.
+
+* `Update HISTORY <https://github.com/webyneter/python-humble-utils/issues/157>`_.
+
+
+v1.0.3
+------
+
+`v1.0.3 <https://github.com/webyneter/python-humble-utils/releases/tag/v1.0.3>`_.
+
+* `Fix deployment to the new PyPI <https://github.com/webyneter/python-humble-utils/issues/42>`_.
+* `Mention python-humble-utils in "Open Source Projects using Hypothesis" <https://github.com/webyneter/python-humble-utils/issues/98>`_.
+* `Move bumpversion configuration from setup.cfg to .bumpversion.cfg <https://github.com/webyneter/python-humble-utils/issues/103>`_.
+* `Enclose notes in Note blocks <https://github.com/webyneter/python-humble-utils/issues/48>`_.
+* `Remove entrypoint section from setup.py <https://github.com/webyneter/python-humble-utils/issues/47>`_.
+* `Add insert utility <https://github.com/webyneter/python-humble-utils/issues/97>`_.
+
+
 v1.0.2
 ------
 
