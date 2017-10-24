@@ -19,19 +19,19 @@ from .conftest import FileMeta
 
 
 def test_extract_file_name_with_extension(file_meta: FileMeta):
-    actual = extract_file_name_with_extension(file_meta.file_path)
-    expected = file_meta.file_name_with_extension
+    actual = extract_file_name_with_extension(file_meta.path)
+    expected = file_meta.name_with_extension
     assert actual == expected
 
 
 def test_extract_file_name_and_extension(file_meta: FileMeta):
-    name_and_extension = extract_file_name_and_extension(file_meta.file_path)
-    assert name_and_extension.name == file_meta.file_name
-    assert name_and_extension.extension == file_meta.file_extension
+    name_and_extension = extract_file_name_and_extension(file_meta.path)
+    assert name_and_extension.name == file_meta.name
+    assert name_and_extension.extension == file_meta.extension
 
 
 def test_extract_file_dir_path(file_meta: FileMeta):
-    file_path = file_meta.file_path
+    file_path = file_meta.path
     actual_file_dir_path = extract_file_dir_path(file_path=file_path)
     assert actual_file_dir_path == file_meta.dir_path
 
@@ -69,7 +69,7 @@ def test_when_generating_random_dir_path_given_invalid_arguments_should_raise(su
 
 
 def test_when_generating_random_file_name_with_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):
-    file_extension = file_meta.file_extension
+    file_extension = file_meta.extension
     actual_file_basename = generate_random_file_name_with_extension(file_extension)
     assert extract_file_name_and_extension(actual_file_basename).extension == file_extension
 
@@ -82,8 +82,8 @@ def test_read_file(tmpdir_factory,
                    file_meta: FileMeta,
                    as_single_line: bool,
                    verifier: Callable[[str], bool]):
-    tmp_file_path = generate_tmp_file_path(tmpdir_factory, file_meta.file_name_with_extension)
-    create_or_update_file(tmp_file_path, file_meta.file_content, file_meta.file_content_encoding)
+    tmp_file_path = generate_tmp_file_path(tmpdir_factory, file_meta.name_with_extension)
+    create_or_update_file(tmp_file_path, file_meta.content, file_meta.content_encoding)
 
     file_content = read_file(tmp_file_path, as_single_line)
 
@@ -140,29 +140,29 @@ def test_get_file_paths(tmpdir_factory,
 def test_when_creating_or_updating_file_given_file_not_exists_should_create_file(tmpdir_factory,
                                                                                  file_meta: FileMeta):
     tmp_dir_path = os.path.join(str(tmpdir_factory.getbasetemp()), file_meta.dir_path)
-    tmp_file_path = os.path.join(tmp_dir_path, file_meta.file_name_with_extension)
+    tmp_file_path = os.path.join(tmp_dir_path, file_meta.name_with_extension)
 
     os.makedirs(tmp_dir_path, exist_ok=True)
-    create_or_update_file(tmp_file_path, file_meta.file_content, file_meta.file_content_encoding)
+    create_or_update_file(tmp_file_path, file_meta.content, file_meta.content_encoding)
 
     with open(tmp_file_path, 'rb') as file:
-        assert file.read().decode(file_meta.file_content_encoding) == file_meta.file_content
+        assert file.read().decode(file_meta.content_encoding) == file_meta.content
 
 
 def test_when_creating_or_updating_file_given_file_exists_should_update_file(tmpdir_factory,
                                                                              file_meta: FileMeta):
     tmp_dir_path = os.path.join(str(tmpdir_factory.getbasetemp()), file_meta.dir_path)
-    tmp_file_path = os.path.join(tmp_dir_path, file_meta.file_name_with_extension)
+    tmp_file_path = os.path.join(tmp_dir_path, file_meta.name_with_extension)
 
     os.makedirs(tmp_dir_path, exist_ok=True)
     with open(tmp_file_path, 'wb') as file:
-        file.write(file_meta.file_content.encode(file_meta.file_content_encoding))
+        file.write(file_meta.content.encode(file_meta.content_encoding))
 
-    updated_file_content = file_meta.file_content + ' (+ this update)'
-    create_or_update_file(tmp_file_path, updated_file_content, file_meta.file_content_encoding)
+    updated_file_content = file_meta.content + ' (+ this update)'
+    create_or_update_file(tmp_file_path, updated_file_content, file_meta.content_encoding)
 
     with open(tmp_file_path, 'rb') as file:
-        assert file.read().decode(file_meta.file_content_encoding) == updated_file_content
+        assert file.read().decode(file_meta.content_encoding) == updated_file_content
 
 
 @mark.parametrize('s,expected', [

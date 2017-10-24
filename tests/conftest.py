@@ -7,20 +7,20 @@ class FileMeta:
     """A container for file meta."""
 
     def __init__(self, dir_path: str,
-                 file_name: str,
-                 file_extension: str,
-                 file_name_with_extension: str,
-                 file_path: str,
-                 file_content: str,
-                 file_content_encoding: str):
+                 name: str,
+                 extension: str,
+                 name_with_extension: str,
+                 path: str,
+                 content: str,
+                 content_encoding: str):
         super().__init__()
         self.dir_path = dir_path
-        self.file_name = file_name
-        self.file_extension = file_extension
-        self.file_name_with_extension = file_name_with_extension
-        self.file_path = file_path
-        self.file_content = file_content
-        self.file_content_encoding = file_content_encoding
+        self.name = name
+        self.extension = extension
+        self.name_with_extension = name_with_extension
+        self.path = path
+        self.content = content
+        self.content_encoding = content_encoding
 
 
 @fixture
@@ -33,9 +33,9 @@ def file_meta() -> FileMeta:
     file_name_with_extension = file_name + file_extension
     file_path = os.path.join(dir_path, file_name_with_extension)
     return FileMeta(dir_path=dir_path,
-                    file_name=file_name,
-                    file_extension=file_extension,
-                    file_name_with_extension=file_name_with_extension,
-                    file_path=file_path,
-                    file_content=file_content,
-                    file_content_encoding=file_content_encoding)
+                    name=file_name,
+                    extension=file_extension,
+                    name_with_extension=file_name_with_extension,
+                    path=file_path,
+                    content=file_content,
+                    content_encoding=file_content_encoding)
