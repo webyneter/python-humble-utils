@@ -15,7 +15,7 @@ FileMeta = NamedTuple('FileMeta', [
 
 
 @fixture
-def file_meta():
+def file_meta() -> FileMeta:
     dir_path = os.path.join('path', 'to', 'dir', 'with')
     file_content = os.linesep.join(['Behold,', 'this', 'is', 'multiline', 'content!'])
     file_content_encoding = 'utf-8'

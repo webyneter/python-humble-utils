@@ -18,19 +18,19 @@ from .conftest import FileMeta
 from .classes import Foo, Boo, Moo
 
 
-def test_when_extracting_file_name_with_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):
+def test_extract_file_name_with_extension(file_meta: FileMeta):
     actual = extract_file_name_with_extension(file_meta.file_path)
     expected = file_meta.file_name_with_extension
     assert actual == expected
 
 
-def test_when_extracting_file_name_and_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):
+def test_extract_file_name_and_extension(file_meta: FileMeta):
     name_and_extension = extract_file_name_and_extension(file_meta.file_path)
     assert name_and_extension.name == file_meta.file_name
     assert name_and_extension.extension == file_meta.file_extension
 
 
-def test_when_extracting_file_dir_path_given_valid_arguments_should_succeed(file_meta: FileMeta):
+def test_extract_file_dir_path(file_meta: FileMeta):
     file_path = file_meta.file_path
     actual_file_dir_path = extract_file_dir_path(file_path=file_path)
     assert actual_file_dir_path == file_meta.dir_path
@@ -40,20 +40,20 @@ def test_when_extracting_file_dir_path_given_valid_arguments_should_succeed(file
     ("('text', 42)", lambda tup: isinstance(tup, tuple) and tup[0] == 'text' and tup[1] == 42),
     ('()', lambda tup: tup == ()),
 ])
-def test_when_parsing_tuple_from_string_given_valid_arguments_should_succeed(tup: str,
-                                                                             verifier: Callable[[str], bool]):
+def test_parse_tuple_from_string(tup: str,
+                                 verifier: Callable[[str], bool]):
     parsed_tup = parse_tuple_from_string(tup)
     assert verifier(parsed_tup)
 
 
-def test_when_generating_hex_uuid_4_given_valid_arguments_should_succeed():
+def test_generate_hex_uuid_4():
     retry_count = 128
     for i in range(retry_count):
         UUID(hex=generate_hex_uuid_4(), version=4)
 
 
 @given(subdir_count=integers(min_value=0, max_value=2))
-def test_when_generating_random_dir_path_given_valid_arguments_should_succeed(subdir_count: int):
+def test_generate_random_dir_path(subdir_count: int):
     dir_path = generate_random_dir_path(subdir_count)
     subdirs = PurePath(dir_path).parts[1:]
     assert len(subdirs) == subdir_count
@@ -78,10 +78,10 @@ def test_when_generating_random_file_name_with_extension_given_valid_arguments_s
     (True, lambda file_content: os.linesep not in file_content),
     (False, lambda file_content: os.linesep in file_content),
 ])
-def test_when_reading_file_given_valid_arguments_should_succeed(tmpdir_factory,
-                                                                file_meta: FileMeta,
-                                                                as_single_line: bool,
-                                                                verifier: Callable[[str], bool]):
+def test_read_file(tmpdir_factory,
+                   file_meta: FileMeta,
+                   as_single_line: bool,
+                   verifier: Callable[[str], bool]):
     tmp_file_path = generate_tmp_file_path(tmpdir_factory, file_meta.file_name_with_extension)
     create_or_update_file(tmp_file_path, file_meta.file_content, file_meta.file_content_encoding)
 
@@ -101,9 +101,9 @@ def test_when_reading_file_given_valid_arguments_should_succeed(tmpdir_factory,
     (['.a', '.b'], 1),
     (['.a', '.b'], 2),
 ])
-def test_when_getting_file_paths_given_valid_arguments_should_succeed(tmpdir_factory,
-                                                                      allowed_file_extensions: Sequence[str],
-                                                                      max_subdir_count: int):
+def test_get_file_paths(tmpdir_factory,
+                        allowed_file_extensions: Sequence[str],
+                        max_subdir_count: int):
     recursively = max_subdir_count > 0
 
     for subdir_count in range(max_subdir_count + 1):
@@ -171,8 +171,8 @@ def test_when_creating_or_updating_file_given_file_exists_should_update_file(tmp
     ('iAmInPascalCase_but_i_am_not_andHereAmIOnceAgain',
      'i_am_in_pascal_case_but_i_am_not_and_here_am_i_once_again'),
 ])
-def test_when_converting_camel_or_pascal_case_to_snake_case_given_valid_arguments_should_succeed(s: str,
-                                                                                                 expected: str):
+def test_convert_camel_or_pascal_case_to_snake_case(s: str,
+                                                    expected: str):
     assert camel_or_pascal_case_to_snake_case(s) == expected
 
 
@@ -182,8 +182,8 @@ def test_when_converting_camel_or_pascal_case_to_snake_case_given_valid_argument
     ('YetAnotherOneBUTNOWWhilebeingastrangeOneIamStillAProperPascalCase',
      'Yet Another One BUTNOW Whilebeingastrange One Iam Still A Proper Pascal Case'),
 ])
-def test_when_converting_camel_or_pascal_case_to_space_delimited_given_valid_arguments_should_succeed(s: str,
-                                                                                                      expected: str):
+def test_convert_camel_or_pascal_case_to_space_delimited(s: str,
+                                                         expected: str):
     actual = camel_or_pascal_case_to_space_delimited(s)
     assert actual == expected
 
@@ -201,11 +201,11 @@ def test_when_getting_all_subclasses_given_self_excluded_should_succeed():
     assert set(get_all_subclasses(Foo, False)) == {Boo, Moo}
 
 
-def test_when_getting_class_name_given_valid_arguments_should_succeed():
+def test_get_class_name():
     assert get_class_name(Foo) == Foo.__class__.__name__
     assert get_class_name(Foo.InsideFoo) == Foo.InsideFoo.__class__.__name__
 
 
-def test_when_getting_class_qualname_given_valid_arguments_should_succeed():
+def test_get_class_qualname():
     assert get_class_qualname(Foo) == Foo.__qualname__
     assert get_class_qualname(Foo.InsideFoo) == Foo.InsideFoo.__qualname__
