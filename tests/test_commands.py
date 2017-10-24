@@ -7,14 +7,15 @@ from hypothesis import given
 from hypothesis.strategies import integers
 from pytest import mark, raises
 
-from .classes import Foo, Boo, Moo
-from ..commands import extract_file_name_with_extension, extract_file_dir_path, extract_file_name_and_extension, \
+from python_humble_utils.commands import extract_file_name_with_extension, extract_file_dir_path, \
+    extract_file_name_and_extension, \
     generate_random_file_name_with_extension, parse_tuple_from_string, read_file, \
     create_or_update_file, camel_or_pascal_case_to_snake_case, get_all_subclasses, \
     camel_or_pascal_case_to_space_delimited, generate_random_dir_path, yield_file_paths, generate_hex_uuid_4, \
     get_class_name, get_class_qualname
-from ..conftest import FileMeta
-from ..pytest_commands import generate_tmp_file_path
+from python_humble_utils.pytest_commands import generate_tmp_file_path
+from .conftest import FileMeta
+from .classes import Foo, Boo, Moo
 
 
 def test_when_extracting_file_name_with_extension_given_valid_arguments_should_succeed(file_meta: FileMeta):
