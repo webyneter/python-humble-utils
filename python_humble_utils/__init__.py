@@ -1,3 +1,3 @@
 __author__ = """Nikita P. Shupeyko"""
 __email__ = 'webyneter@gmail.com'
-__version__ = '1.0.4'
+__version__ = '2.0.0'
