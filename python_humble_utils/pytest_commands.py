@@ -4,8 +4,7 @@ import os
 def generate_tmp_file_path(tmpdir_factory,
                            file_name_with_extension: str,
                            tmp_dir_path: str = None) -> str:
-    """
-    Generate file path relative to a temporary directory.
+    """Generate file path relative to a temporary directory.
 
     :param tmpdir_factory: py.test's `tmpdir_factory` fixture.
     :param file_name_with_extension: file name with extension e.g. `file_name.ext`.

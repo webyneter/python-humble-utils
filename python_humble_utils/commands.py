@@ -6,8 +6,7 @@ from typing import NamedTuple, Sequence, Iterable
 
 
 def extract_file_name_with_extension(file_path: str) -> str:
-    """
-    Extract file name with extension.
+    """Extract file name with extension.
 
     :param file_path: path to the file.
     :return: file name with extension.
@@ -22,8 +21,7 @@ NameAndExtension = NamedTuple('NameAndExtension', [
 
 
 def extract_file_name_and_extension(file_path: str) -> NameAndExtension:
-    """
-    Extract file name and extension as named tuple.
+    """Extract file name and extension as named tuple.
 
     :param file_path: path to the file.
     :return: named tuple of file name and extension.
@@ -34,8 +32,7 @@ def extract_file_name_and_extension(file_path: str) -> NameAndExtension:
 
 
 def extract_file_dir_path(file_path: str) -> str:
-    """
-    Extract directory path.
+    """Extract directory path.
 
     :param file_path: path to the file.
     :return: directory path.
@@ -44,8 +41,7 @@ def extract_file_dir_path(file_path: str) -> str:
 
 
 def parse_tuple_from_string(string_tuple: str) -> tuple:
-    """
-    Parse tuple from its literal string representation.
+    """Parse tuple from its literal string representation.
 
     :param string_tuple: tuple literal string representation e.g. `'('this', 'is', 'a', 'tuple')'`.
     :return: parsed tuple.
@@ -54,8 +50,7 @@ def parse_tuple_from_string(string_tuple: str) -> tuple:
 
 
 def generate_hex_uuid_4() -> str:
-    """
-    Generate UUID (version 4) in hexadecimal representation.
+    """Generate UUID (version 4) in hexadecimal representation.
 
     :return: hexadecimal representation of version 4 UUID.
     """
@@ -63,8 +58,7 @@ def generate_hex_uuid_4() -> str:
 
 
 def generate_random_dir_path(subdir_count: int = 0) -> str:
-    """
-    Generate randomly-named directory.
+    """Generate randomly-named directory.
 
     :param subdir_count: a number of subdirectories to generate in the directory root.
     :return: directory root path.
@@ -81,8 +75,7 @@ def generate_random_dir_path(subdir_count: int = 0) -> str:
 
 
 def generate_random_file_name_with_extension(file_extension: str) -> str:
-    """
-    Generate random file name with the extension specified.
+    """Generate random file name with the extension specified.
 
     :param file_extension: file name extensionm e.g. `.ext`.
     :return: file name with the extension.
@@ -92,8 +85,7 @@ def generate_random_file_name_with_extension(file_extension: str) -> str:
 
 def read_file(file_path: str,
               as_single_line: bool = False) -> str:
-    """
-    Read file content.
+    """Read file content.
 
     :param file_path: path to the file.
     :param as_single_line: whether or not the file is to be read as a single line.
@@ -111,8 +103,7 @@ def read_file(file_path: str,
 def yield_file_paths(dir_path: str,
                      allowed_file_extensions: Sequence[str],
                      recursively: bool = False) -> Iterable[str]:
-    """
-    Yield file paths.
+    """Yield file paths.
 
     :param dir_path: path to the containing directory.
     :param allowed_file_extensions: file extensions to match against e.g. `['.abc', '.def']`.
@@ -137,8 +128,7 @@ def yield_file_paths(dir_path: str,
 def create_or_update_file(file_path: str,
                           file_content: str = '',
                           file_content_encoding: str = 'utf-8') -> None:
-    """
-    Create or update file.
+    """Create or update file.
 
     :param file_path: path to the file.
     :param file_content: file content.
@@ -149,8 +139,7 @@ def create_or_update_file(file_path: str,
 
 
 def camel_or_pascal_case_to_snake_case(s: str) -> str:
-    """
-    Convert `camelCased` or `PascalCased` string to `snake_case`.
+    """Convert `camelCased` or `PascalCased` string to `snake_case`.
 
     Based on https://stackoverflow.com/a/1176023/1557013.
 
@@ -163,8 +152,7 @@ def camel_or_pascal_case_to_snake_case(s: str) -> str:
 
 
 def camel_or_pascal_case_to_space_delimited(s: str) -> str:
-    """
-    Convert `camelCased` or `PascalCased` string to space-delimited.
+    """Convert `camelCased` or `PascalCased` string to space-delimited.
 
     Based on https://stackoverflow.com/a/9283563/1557013.
 
@@ -177,8 +165,7 @@ def camel_or_pascal_case_to_space_delimited(s: str) -> str:
 
 def get_all_subclasses(cls: type,
                        including_self: bool = False) -> Sequence[type]:
-    """
-    Get all subclasses.
+    """Get all subclasses.
 
     :param cls: class to lookup subclasses of.
     :param including_self: whether or not the the :param cls: itself is to be accounted for.
@@ -191,8 +178,7 @@ def get_all_subclasses(cls: type,
 
 
 def get_class_name(cls: type) -> str:
-    """
-    Get class name.
+    """Get class name.
 
     :param cls: class.
     :return: :param cls: name.
@@ -201,8 +187,7 @@ def get_class_name(cls: type) -> str:
 
 
 def get_class_qualname(cls: type) -> str:
-    """
-    Get fully-qualified class name.
+    """Get fully-qualified class name.
 
     :param cls: class.
     :return: fully-qualified :param cls: name.
