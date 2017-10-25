@@ -44,7 +44,7 @@ Python utils for everyday use.
 * Please, `open issues`_ before sending emails to the maintainers: You will get a much faster response!
 
 .. _`open issues`: https://github.com/webyneter/python-humble-utils/issues/new
-.. _`Documentation`: https://python-humble-utils.readthedocs.io/en/stable/
+.. _`Documentation`: https://python-humble-utils.readthedocs.io/en/stable/installation.html
 
 
 
