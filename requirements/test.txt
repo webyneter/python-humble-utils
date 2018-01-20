@@ -4,6 +4,6 @@ pytest-runner==3.0
 pytest-cov==2.5.1
 pytest-mock==1.6.3
 coverage==4.4.2
-codecov==2.0.13
+codecov==2.0.14
 flake8==3.5.0
 hypothesis==3.44.18
