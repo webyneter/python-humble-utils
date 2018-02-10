@@ -1,6 +1,6 @@
 tox==2.9.1
 pytest==3.4.0
-pytest-runner==3.0
+pytest-runner==4.0
 pytest-cov==2.5.1
 pytest-mock==1.6.3
 coverage==4.5
