@@ -132,7 +132,7 @@ All those using ``python-humble-utils``, including its codebase and project mana
 Acknowledgements
 ----------------
 
-This package was scaffolded via `Cookiecutter`_ with `audreyr/cookiecutter-pypackage`_ template.
+This package was initially scaffolded via `Cookiecutter`_ with `audreyr/cookiecutter-pypackage`_ template.
 
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
