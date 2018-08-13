@@ -17,9 +17,7 @@ def extract_file_name_with_extension(file_path: str) -> str:
 class FileNameAndExtension:
     """A container for file name and extension"""
 
-    def __init__(self,
-                 name: str,
-                 extension: str):
+    def __init__(self, name: str, extension: str):
         super().__init__()
         self.name = name
         self.extension = extension
@@ -71,7 +69,7 @@ def generate_random_dir_path(subdir_count: int = 0) -> str:
     if subdir_count < 0:
         raise ValueError("'subdir_count' must not be negative!")
 
-    dir_path = os.path.join(generate_hex_uuid_4(), '')
+    dir_path = os.path.join(generate_hex_uuid_4(), "")
     if subdir_count > 0:
         for l in range(subdir_count):
             dir_path = os.path.join(dir_path, generate_hex_uuid_4())
@@ -88,26 +86,25 @@ def generate_random_file_name_with_extension(file_extension: str) -> str:
     return "{}{}".format(generate_hex_uuid_4(), file_extension)
 
 
-def read_file(file_path: str,
-              as_single_line: bool = False) -> str:
+def read_file(file_path: str, as_single_line: bool = False) -> str:
     """Read file content.
 
     :param file_path: path to the file.
     :param as_single_line: whether or not the file is to be read as a single line.
     :return: file content.
     """
-    with open(file_path, 'r') as file:
+    with open(file_path, "r") as file:
         lines = []
         for line in file.readlines():
             if as_single_line:
-                line = line.replace(os.linesep, '')
+                line = line.replace(os.linesep, "")
             lines.append(line)
-        return ''.join(lines)
+        return "".join(lines)
 
 
-def yield_file_paths(dir_path: str,
-                     allowed_file_extensions: Sequence[str],
-                     recursively: bool = False) -> Iterable[str]:
+def yield_file_paths(
+    dir_path: str, allowed_file_extensions: Sequence[str], recursively: bool = False
+) -> Iterable[str]:
     """Yield file paths.
 
     :param dir_path: path to the containing directory.
@@ -116,7 +113,9 @@ def yield_file_paths(dir_path: str,
     :return: file paths.
     """
 
-    def filter_allowed_file_paths(dp: str, fbs: Sequence[str], afe: Sequence[str]) -> Iterable[str]:
+    def filter_allowed_file_paths(
+        dp: str, fbs: Sequence[str], afe: Sequence[str]
+    ) -> Iterable[str]:
         for fb in fbs:
             p = os.path.join(dp, fb)
             if extract_file_name_and_extension(p).extension in afe:
@@ -124,22 +123,26 @@ def yield_file_paths(dir_path: str,
 
     if recursively:
         for root_dir_path, _, file_basenames in os.walk(dir_path):
-            yield from filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
+            yield from filter_allowed_file_paths(
+                dir_path, file_basenames, allowed_file_extensions
+            )
     else:
         file_basenames = os.listdir(dir_path)
-        yield from filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
+        yield from filter_allowed_file_paths(
+            dir_path, file_basenames, allowed_file_extensions
+        )
 
 
-def create_or_update_file(file_path: str,
-                          file_content: str = '',
-                          file_content_encoding: str = 'utf-8') -> None:
+def create_or_update_file(
+    file_path: str, file_content: str = "", file_content_encoding: str = "utf-8"
+) -> None:
     """Create or update file.
 
     :param file_path: path to the file.
     :param file_content: file content.
     :param file_content_encoding: file content encoding e.g. `latin-1`.
     """
-    with open(file_path, 'wb+') as file:
+    with open(file_path, "wb+") as file:
         file.write(file_content.encode(file_content_encoding))
 
 
@@ -151,7 +154,9 @@ def camel_or_pascal_case_to_snake_case(s: str) -> str:
     :param s: string in `camelCase` or `PascalCase`.
     :return: string in `snake_case`.
     """
-    snake_case = re.sub('([a-z0-9])([A-Z])', r'\1_\2', re.sub('(.)([A-Z][a-z]+)', r'\1_\2', s))
+    snake_case = re.sub(
+        "([a-z0-9])([A-Z])", r"\1_\2", re.sub("(.)([A-Z][a-z]+)", r"\1_\2", s)
+    )
     snake_case = snake_case.lower()
     return snake_case
 
@@ -164,12 +169,11 @@ def camel_or_pascal_case_to_space_delimited(s: str) -> str:
     :param s: string in `camelCase` or `PascalCase`.
     :return: space-delimited string.
     """
-    space_delimited = re.sub(r'((?<=[a-z])[A-Z]|(?<!\A)[A-Z](?=[a-z]))', r' \1', s)
+    space_delimited = re.sub(r"((?<=[a-z])[A-Z]|(?<!\A)[A-Z](?=[a-z]))", r" \1", s)
     return space_delimited
 
 
-def get_all_subclasses(cls: type,
-                       including_self: bool = False) -> Sequence[type]:
+def get_all_subclasses(cls: type, including_self: bool = False) -> Sequence[type]:
     """Get all subclasses.
 
     :param cls: class to lookup subclasses of.
