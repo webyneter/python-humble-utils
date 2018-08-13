@@ -226,3 +226,5 @@ GitHub.sublime-settings
 pyvenv.cfg
 .venv
 pip-selfcheck.json
+
+.pytest_cache/
