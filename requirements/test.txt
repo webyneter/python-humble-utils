@@ -5,5 +5,5 @@ pytest-cov==2.6.0
 pytest-mock==1.10.0
 coverage==4.5.1
 codecov==2.0.15
-flake8==3.5.0
+flake8==3.6.0
 hypothesis==3.77.0
