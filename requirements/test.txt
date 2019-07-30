@@ -6,4 +6,4 @@ pytest-mock==1.10.0
 coverage==4.5.3
 codecov==2.0.15
 flake8==3.5.0
-hypothesis==4.11.5
+hypothesis==4.32.2
