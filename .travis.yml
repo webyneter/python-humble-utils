@@ -14,6 +14,7 @@ install:
 
 before_script:
     - if [[ "${TRAVIS_PYTHON_VERSION}" != '3.5' ]]; then black --check .; fi
+    - pip install -r ./requirements.coverage.txt
 
 script:
     - tox -e codecov
