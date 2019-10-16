@@ -25,8 +25,8 @@ from python_humble_utils.commands import (
     get_class_qualname,
 )
 from python_humble_utils.pytest_commands import generate_tmp_file_path
-from .classes import Foo, Boo, Moo
-from .conftest import FileMeta
+from tests.classes import Moo, Foo, Boo
+from tests.conftest import FileMeta
 
 
 def test_extract_file_name_with_extension(file_meta: FileMeta):
