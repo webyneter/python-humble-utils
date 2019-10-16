@@ -41,11 +41,11 @@ Scenarios
 Updating Requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
-Project requirements must be declared and pinned in ``requirements.txt``.
+Project requirements must be declared and pinned in ``./requirements*.txt``.
 
 To install/upgrade/uninstall dependencies into/in/from the environment::
 
-    $ make reinstall
+    $ make install
 
 
 .. _developing-locally-tox:

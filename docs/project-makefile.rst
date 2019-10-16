@@ -7,7 +7,7 @@ Project Makefile
 
 .. include:: ./includes/execution_context_notice.rst
 
-To facilitate smooth development worflow, we provide a ``Makefile``
+To facilitate smooth development workflow, we provide a ``Makefile``
 defining a number of convenience commands.
 
 * ``clean`` running
@@ -50,21 +50,21 @@ defining a number of convenience commands.
 
     $ make servedocs
 
-* ``release`` packaging and releasing the project to PyPI::
+* ``setup-release`` packaging and releasing the project to PyPI::
 
-    $ make release
+    $ make setup-release
 
-* ``dist`` builds source and wheel packages via `setuptools`_::
+* ``setup-dist`` builds source and wheel packages via `setuptools`_::
 
-    $ make dist
+    $ make setup-dist
 
-* ``install`` installing the package to the current environment::
+* ``setup-install`` installing the package to the current environment::
+
+    $ make setup-install
+
+* ``install`` keeping local environment dependencies in sync with those defined in ``./requirements*.txt``::
 
     $ make install
-
-* ``reinstall`` keeping local environment dependencies in sync with those declared in ``requirements.txt``::
-
-    $ make reinstall
 
 
 .. _`PEP8`: https://www.python.org/dev/peps/pep-0008/
