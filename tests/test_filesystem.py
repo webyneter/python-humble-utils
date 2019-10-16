@@ -83,10 +83,10 @@ def test_yield_file_paths(
         if len(allowed_file_extensions) > 0:
             disallowed_file_extension = allowed_file_extensions[-1] + file_extension_suffix
         else:
-            disallowed_file_extension = "." + file_extension_suffix
-        disallowed_file_path = dir_path / Path("file" + disallowed_file_extension)
+            disallowed_file_extension = f".{file_extension_suffix}"
+        disallowed_file_path = dir_path / Path(f"file{disallowed_file_extension}")
         # ...with allowed extensions:
-        allowed_file_names_with_extension = ["file" + e for e in allowed_file_extensions]
+        allowed_file_names_with_extension = [f"file{e}" for e in allowed_file_extensions]
         allowed_file_paths = [dir_path / Path(fne) for fne in allowed_file_names_with_extension]
 
         # Create files in respective dirs:
