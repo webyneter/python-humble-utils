@@ -45,7 +45,7 @@ Project requirements must be declared and pinned in ``requirements.txt``.
 
 To install/upgrade/uninstall dependencies into/in/from the environment::
 
-    $ make synclocal
+    $ make reinstall
 
 
 .. _developing-locally-tox:

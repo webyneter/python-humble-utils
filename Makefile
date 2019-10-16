@@ -86,6 +86,6 @@ dist: clean ## builds source and wheel package
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
 
-synclocal:
+reinstall:
 	$(pip freeze | xargs pip uninstall -y)
 	pip install -r ./requirements.txt

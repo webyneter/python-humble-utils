@@ -62,9 +62,9 @@ defining a number of convenience commands.
 
     $ make install
 
-* ``synclocal`` keeping local environment dependencies in sync with those declared in ``local.txt``::
+* ``reinstall`` keeping local environment dependencies in sync with those declared in ``requirements.txt``::
 
-    $ make synclocal
+    $ make reinstall
 
 
 .. _`PEP8`: https://www.python.org/dev/peps/pep-0008/
