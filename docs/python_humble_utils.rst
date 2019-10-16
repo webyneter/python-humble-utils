@@ -1,30 +1,45 @@
 python\_humble\_utils package
 =============================
 
+Subpackages
+-----------
+
+.. toctree::
+
+   python_humble_utils.vendor
+
 Submodules
 ----------
 
-python\_humble\_utils\.commands module
---------------------------------------
+python\_humble\_utils.classes module
+------------------------------------
 
-.. automodule:: python_humble_utils.commands
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. automodule:: python_humble_utils.classes
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-python\_humble\_utils\.pytest\_commands module
-----------------------------------------------
+python\_humble\_utils.filesystem module
+---------------------------------------
 
-.. automodule:: python_humble_utils.pytest_commands
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. automodule:: python_humble_utils.filesystem
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+python\_humble\_utils.strings module
+------------------------------------
+
+.. automodule:: python_humble_utils.strings
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
 Module contents
 ---------------
 
 .. automodule:: python_humble_utils
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:
