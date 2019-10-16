@@ -41,7 +41,7 @@ Scenarios
 Updating Requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
-Project requirements must be declared and pinned in the appropriate ``./requirements/*.txt`` files.
+Project requirements must be declared and pinned in ``requirements.txt``.
 
 To install/upgrade/uninstall dependencies into/in/from the environment::
 

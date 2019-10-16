@@ -1,4 +1,0 @@
--r ./base.txt
--r ./development.txt
--r ./docs.txt
--r ./test.txt
