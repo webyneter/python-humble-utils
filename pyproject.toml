@@ -1,0 +1,2 @@
+[tool.black]
+line-length = 100  # 100 fits precisely on FullHD screen, with file structure pane open to the left at all times
