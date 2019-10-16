@@ -10,7 +10,6 @@ with open("HISTORY.rst") as history_file:
 
 setup_requirements = ["pytest-runner"]
 
-
 setup(
     name="python-humble-utils",
     version="2.0.0",
