@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from typing import Iterable, Optional, Callable, Collection
+from typing import Iterable, Optional, Callable, Sequence
 from uuid import uuid4
 
 
@@ -42,7 +42,7 @@ def read_file(file_path: str, as_single_line: bool = False) -> str:
 
 
 def yield_file_paths(
-    dir_path: Path, allowed_file_extensions: Collection[str], recursively: bool = False
+    dir_path: Path, allowed_file_extensions: Sequence[str], recursively: bool = False
 ) -> Iterable[Path]:
     """Yield file paths.
 
@@ -53,7 +53,7 @@ def yield_file_paths(
     """
 
     def filter_allowed_file_paths(
-        dp: Path, fbns: Collection[str], afes: Collection[str]
+        dp: Path, fbns: Sequence[str], afes: Sequence[str]
     ) -> Iterable[Path]:
         for fbn in fbns:
             p = dp / Path(fbn)

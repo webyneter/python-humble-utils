@@ -1,7 +1,7 @@
-from typing import Collection, Type
+from typing import Sequence, Type
 
 
-def get_all_subclasses(cls: Type, including_self: bool = False) -> Collection[Type]:
+def get_all_subclasses(cls: Type, including_self: bool = False) -> Sequence[Type]:
     """Get all subclasses.
 
     :param cls: class to lookup subclasses of.
