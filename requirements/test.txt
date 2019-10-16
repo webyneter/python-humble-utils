@@ -1,4 +1,4 @@
-tox==3.7.0
+tox==3.14.0
 pytest==5.2.1
 pytest-runner==4.2
 pytest-cov==2.8.1
