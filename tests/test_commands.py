@@ -50,10 +50,7 @@ def test_extract_file_dir_path(file_meta: FileMeta):
 @mark.parametrize(
     "tup,verifier",
     [
-        (
-            "('text', 42)",
-            lambda tup: isinstance(tup, tuple) and tup[0] == "text" and tup[1] == 42,
-        ),
+        ("('text', 42)", lambda tup: isinstance(tup, tuple) and tup[0] == "text" and tup[1] == 42),
         ("()", lambda tup: tup == ()),
     ],
 )
@@ -79,9 +76,7 @@ def test_generate_random_dir_path(subdir_count: int):
 
 
 @given(subdir_count=integers(max_value=-1))
-def test_when_generating_random_dir_path_given_invalid_arguments_should_raise(
-    subdir_count: int
-):
+def test_when_generating_random_dir_path_given_invalid_arguments_should_raise(subdir_count: int):
     with raises(ValueError):
         generate_random_dir_path(subdir_count)
 
@@ -91,10 +86,7 @@ def test_when_generating_random_file_name_with_extension_given_valid_arguments_s
 ):
     file_extension = file_meta.extension
     actual_file_basename = generate_random_file_name_with_extension(file_extension)
-    assert (
-        extract_file_name_and_extension(actual_file_basename).extension
-        == file_extension
-    )
+    assert extract_file_name_and_extension(actual_file_basename).extension == file_extension
 
 
 @mark.parametrize(
@@ -105,14 +97,9 @@ def test_when_generating_random_file_name_with_extension_given_valid_arguments_s
     ],
 )
 def test_read_file(
-    tmpdir_factory,
-    file_meta: FileMeta,
-    as_single_line: bool,
-    verifier: Callable[[str], bool],
+    tmpdir_factory, file_meta: FileMeta, as_single_line: bool, verifier: Callable[[str], bool]
 ):
-    tmp_file_path = generate_tmp_file_path(
-        tmpdir_factory, file_meta.name_with_extension
-    )
+    tmp_file_path = generate_tmp_file_path(tmpdir_factory, file_meta.name_with_extension)
     create_or_update_file(tmp_file_path, file_meta.content, file_meta.content_encoding)
 
     file_content = read_file(tmp_file_path, as_single_line)
@@ -147,17 +134,13 @@ def test_get_file_paths(
         # ...with a disallowed extension:
         file_extension_suffix = "z"
         if len(allowed_file_extensions) > 0:
-            disallowed_file_extension = (
-                allowed_file_extensions[-1] + file_extension_suffix
-            )
+            disallowed_file_extension = allowed_file_extensions[-1] + file_extension_suffix
         else:
             disallowed_file_extension = ".{}".format(file_extension_suffix)
         disallowed_file_name_with_extension = generate_random_file_name_with_extension(
             disallowed_file_extension
         )
-        disallowed_file_path = os.path.join(
-            dir_path, disallowed_file_name_with_extension
-        )
+        disallowed_file_path = os.path.join(dir_path, disallowed_file_name_with_extension)
         # ...with allowed extensions:
         allowed_file_names_with_extension = [
             generate_random_file_name_with_extension(e) for e in allowed_file_extensions
@@ -202,9 +185,7 @@ def test_when_creating_or_updating_file_given_file_exists_should_update_file(
         file.write(file_meta.content.encode(file_meta.content_encoding))
 
     updated_file_content = file_meta.content + " (+ this update)"
-    create_or_update_file(
-        tmp_file_path, updated_file_content, file_meta.content_encoding
-    )
+    create_or_update_file(tmp_file_path, updated_file_content, file_meta.content_encoding)
 
     with open(tmp_file_path, "rb") as file:
         assert file.read().decode(file_meta.content_encoding) == updated_file_content

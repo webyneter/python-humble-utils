@@ -24,19 +24,13 @@ def test_when_generating_tmp_file_path_given_abs_tmp_dir_path_should_raise(
     tmpdir_factory, file_meta: FileMeta
 ):
     with raises(ValueError):
-        abs_tmp_dir_path = os.path.join(
-            str(tmpdir_factory.getbasetemp()), file_meta.dir_path
-        )
-        generate_tmp_file_path(
-            tmpdir_factory, file_meta.name_with_extension, abs_tmp_dir_path
-        )
+        abs_tmp_dir_path = os.path.join(str(tmpdir_factory.getbasetemp()), file_meta.dir_path)
+        generate_tmp_file_path(tmpdir_factory, file_meta.name_with_extension, abs_tmp_dir_path)
 
 
 def test_when_generating_tmp_file_path_given_no_tmp_dir_path_should_succeed(
     tmpdir_factory, file_meta: FileMeta
 ):
     actual = generate_tmp_file_path(tmpdir_factory, file_meta.name_with_extension)
-    expected = os.path.join(
-        str(tmpdir_factory.getbasetemp()), file_meta.name_with_extension
-    )
+    expected = os.path.join(str(tmpdir_factory.getbasetemp()), file_meta.name_with_extension)
     assert actual == expected
