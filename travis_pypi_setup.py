@@ -20,7 +20,9 @@ except ImportError:
     from urllib.request import urlopen
 
 GITHUB_REPO = "webyneter/python-humble-utils"
-TRAVIS_CONFIG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".travis.yml")
+TRAVIS_CONFIG_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), ".travis.yml"
+)
 
 
 def load_key(pubkey):
@@ -122,7 +124,9 @@ if "__main__" == __name__:
     parser.add_argument(
         "--repo", default=GITHUB_REPO, help="GitHub repo (default: %s)" % GITHUB_REPO
     )
-    parser.add_argument("--password", help="PyPI password (will prompt if not provided)")
+    parser.add_argument(
+        "--password", help="PyPI password (will prompt if not provided)"
+    )
 
     args = parser.parse_args()
     main(args)

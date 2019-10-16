@@ -21,7 +21,9 @@ def generate_tmp_file_path(
             # Accounting for possible path separator at the end.
             if tmp_file_dir_path_part:
                 tmpdir_factory.mktemp(tmp_file_dir_path_part)
-        tmp_file_path = os.path.join(str(basetemp), tmp_dir_path, file_name_with_extension)
+        tmp_file_path = os.path.join(
+            str(basetemp), tmp_dir_path, file_name_with_extension
+        )
     else:
         tmp_file_path = str(basetemp.join(file_name_with_extension))
 

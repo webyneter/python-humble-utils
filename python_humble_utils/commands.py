@@ -113,7 +113,9 @@ def yield_file_paths(
     :return: file paths.
     """
 
-    def filter_allowed_file_paths(dp: str, fbs: Sequence[str], afe: Sequence[str]) -> Iterable[str]:
+    def filter_allowed_file_paths(
+        dp: str, fbs: Sequence[str], afe: Sequence[str]
+    ) -> Iterable[str]:
         for fb in fbs:
             p = os.path.join(dp, fb)
             if extract_file_name_and_extension(p).extension in afe:
@@ -121,10 +123,14 @@ def yield_file_paths(
 
     if recursively:
         for root_dir_path, _, file_basenames in os.walk(dir_path):
-            yield from filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
+            yield from filter_allowed_file_paths(
+                dir_path, file_basenames, allowed_file_extensions
+            )
     else:
         file_basenames = os.listdir(dir_path)
-        yield from filter_allowed_file_paths(dir_path, file_basenames, allowed_file_extensions)
+        yield from filter_allowed_file_paths(
+            dir_path, file_basenames, allowed_file_extensions
+        )
 
 
 def create_or_update_file(
@@ -148,7 +154,9 @@ def camel_or_pascal_case_to_snake_case(s: str) -> str:
     :param s: string in `camelCase` or `PascalCase`.
     :return: string in `snake_case`.
     """
-    snake_case = re.sub("([a-z0-9])([A-Z])", r"\1_\2", re.sub("(.)([A-Z][a-z]+)", r"\1_\2", s))
+    snake_case = re.sub(
+        "([a-z0-9])([A-Z])", r"\1_\2", re.sub("(.)([A-Z][a-z]+)", r"\1_\2", s)
+    )
     snake_case = snake_case.lower()
     return snake_case
 
