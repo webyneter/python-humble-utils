@@ -8,10 +8,14 @@ python:
     - 3.7
     - 3.8
 
-install: pip install -U tox-travis
+install:
+    - if [[ "${TRAVIS_PYTHON_VERSION}" != '3.5' ]]; then pip install -r ./requirements.code-style.txt; fi
+    - pip install -U tox-travis
+
+before_script:
+    - if [[ "${TRAVIS_PYTHON_VERSION}" != '3.5' ]]; then black --check .; fi
 
 script:
-    - if [[ "${TRAVIS_PYTHON_VERSION}" != '3.5' ]]; then { pip install -r ./requirements.code-style.txt ; black --check . } ; fi
     - tox -e codecov
 
 deploy:
