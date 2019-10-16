@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 from pytest import fixture
 
@@ -26,15 +27,28 @@ class FileMeta:
         self.content_encoding = content_encoding
 
 
+class Foo:
+    class InsideFoo:
+        pass
+
+
+class Boo(Foo):
+    pass
+
+
+class Moo(Boo):
+    pass
+
+
 @fixture
 def file_meta() -> FileMeta:
-    dir_path = os.path.join("path", "to", "dir", "with")
+    dir_path = Path("path") / "to" / "dir" / "with"
     file_content = os.linesep.join(["Behold,", "this", "is", "multiline", "content!"])
     file_content_encoding = "utf-8"
     file_name = "name"
     file_extension = ".ext"
     file_name_with_extension = file_name + file_extension
-    file_path = os.path.join(dir_path, file_name_with_extension)
+    file_path = dir_path / file_name_with_extension
     return FileMeta(
         dir_path=dir_path,
         name=file_name,

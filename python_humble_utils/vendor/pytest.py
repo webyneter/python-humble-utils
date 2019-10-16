@@ -1,9 +1,11 @@
 import os
+from pathlib import Path
+from typing import Optional
 
 
 def generate_tmp_file_path(
-    tmpdir_factory, file_name_with_extension: str, tmp_dir_path: str = None
-) -> str:
+    tmpdir_factory, file_name_with_extension: str, tmp_dir_path: Optional[Path] = None
+) -> Path:
     """Generate file path relative to a temporary directory.
 
     :param tmpdir_factory: py.test's `tmpdir_factory` fixture.
@@ -13,7 +15,7 @@ def generate_tmp_file_path(
     """
     basetemp = tmpdir_factory.getbasetemp()
 
-    if tmp_dir_path:
+    if tmp_dir_path is not None:
         if os.path.isabs(tmp_dir_path):
             raise ValueError("tmp_dir_path is not a relative path!")
         # http://stackoverflow.com/a/16595356/1557013
@@ -21,8 +23,5 @@ def generate_tmp_file_path(
             # Accounting for possible path separator at the end.
             if tmp_file_dir_path_part:
                 tmpdir_factory.mktemp(tmp_file_dir_path_part)
-        tmp_file_path = os.path.join(str(basetemp), tmp_dir_path, file_name_with_extension)
-    else:
-        tmp_file_path = str(basetemp.join(file_name_with_extension))
-
-    return tmp_file_path
+        return Path(basetemp) / tmp_dir_path / file_name_with_extension
+    return Path(basetemp.join(file_name_with_extension))
