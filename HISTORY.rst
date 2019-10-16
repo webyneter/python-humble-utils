@@ -2,6 +2,35 @@ History
 =======
 
 
+v3.0.0
+------
+
+`v3.0.0 <https://github.com/webyneter/python-humble-utils/releases/tag/v3.0.0>`_.
+
+Breaking changes:
+
+* The following functions have been removed as part of the `Remove redundant utilities/utilities making no sense <https://github.com/webyneter/python-humble-utils/issues/176>`_ effort:
+    * `extract_file_name_with_extension`
+    * `extract_file_name_and_extension`
+    * `extract_file_dir_path`
+    * `parse_tuple_from_string`
+    * `generate_hex_uuid_4`
+    * `generate_random_file_name_with_extension`
+    * `get_class_name`
+    * `get_class_qualname`
+* Package structure has been altered.
+* `Drop support for Python 3.5 <https://github.com/webyneter/python-humble-utils/issues/720>`_.
+
+Other changes:
+
+* `Update the docs <https://github.com/webyneter/python-humble-utils/issues/718>`_.
+* `Switch from Python 3.6+ typing.Collection back to typing.Sequence for backward compatibility with Python 3.5 <https://github.com/webyneter/python-humble-utils/issues/717>`_.
+* `Support Python 3.8  <https://github.com/webyneter/python-humble-utils/issues/709>`_.
+* `Switch to native Python paths <https://github.com/webyneter/python-humble-utils/issues/175>`_.
+* `Support Python 3.7 <https://github.com/webyneter/python-humble-utils/issues/8>`_.
+* Upgrade all dependencies to the latest versions to date.
+
+
 v2.0.0
 ------
 
