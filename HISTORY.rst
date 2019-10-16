@@ -2,6 +2,15 @@ History
 =======
 
 
+v3.0.1
+------
+
+`v3.0.1 <https://github.com/webyneter/python-humble-utils/releases/tag/v3.0.1>`_.
+
+* `Sync usage guides <https://github.com/webyneter/python-humble-utils/issues/722>`_.
+* `Update `HISTORY.rst <https://github.com/webyneter/python-humble-utils/issues/719>`_.
+
+
 v3.0.0
 ------
 
