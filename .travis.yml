@@ -3,17 +3,16 @@
 
 language: python
 python:
-    - 3.5
     - 3.6
     - 3.7
     - 3.8
 
 install:
-    - if [[ "${TRAVIS_PYTHON_VERSION}" != '3.5' ]]; then pip install -r ./requirements.code-style.txt; fi
+    - pip install -r ./requirements.code-style.txt
     - pip install -U tox-travis
 
 before_script:
-    - if [[ "${TRAVIS_PYTHON_VERSION}" != '3.5' ]]; then black --check .; fi
+    - black --check .
     - pip install -r ./requirements.coverage.txt
 
 script:
@@ -23,7 +22,7 @@ deploy:
     on:
         repo: webyneter/python-humble-utils
         tags: true
-        python: 3.5
+        python: 3.6
     user: webyneter
     password:
         secure: !!binary |
