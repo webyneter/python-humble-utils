@@ -11,8 +11,7 @@ python:
 install: pip install -U tox-travis
 
 script:
-    - pip install -r ./requirements.code-style.txt
-    - black --check .
+    - if [[ "${TRAVIS_PYTHON_VERSION}" != '3.5' ]]; then { pip install -r ./requirements.code-style.txt ; black --check . } ; fi
     - tox -e codecov
 
 deploy:
