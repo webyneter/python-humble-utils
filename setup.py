@@ -12,7 +12,7 @@ setup_requirements = ["pytest-runner"]
 
 setup(
     name="python-humble-utils",
-    version="2.0.0",
+    version="3.0.0",
     url="https://github.com/webyneter/python-humble-utils",
     description="Python utils for everyday use.",
     long_description=readme + "\n\n" + history,
