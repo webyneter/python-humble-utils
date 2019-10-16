@@ -20,4 +20,4 @@ flake8==3.7.8
 hypothesis==4.40.1
 
 # Code style
-black==19.3b0
+-r ./requirements.code-style.txt

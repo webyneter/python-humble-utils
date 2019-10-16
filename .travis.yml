@@ -10,6 +10,7 @@ python:
 install: pip install -U tox-travis
 
 script:
+    - pip install -r ./requirements.code-style.txt
     - black --check
     - tox -e codecov
 
