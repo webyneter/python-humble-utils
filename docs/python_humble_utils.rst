@@ -27,6 +27,14 @@ python\_humble\_utils.filesystem module
    :undoc-members:
    :show-inheritance:
 
+python\_humble\_utils.objects module
+------------------------------------
+
+.. automodule:: python_humble_utils.objects
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 python\_humble\_utils.strings module
 ------------------------------------
 
