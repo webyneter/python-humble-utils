@@ -48,3 +48,4 @@ def test_get_all_instances(num_instances: int, num_spoiler_instances: int):
 
     assert len(actual_foo_instances) == num_instances
     assert all(fi in expected_foo_instances for fi in actual_foo_instances)
+    gc.collect()
