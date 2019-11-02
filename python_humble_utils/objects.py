@@ -1,4 +1,5 @@
-from typing import TypeVar, Any, Optional, Callable, Iterable
+import gc
+from typing import TypeVar, Any, Optional, Callable, Iterable, Type, Sequence
 
 T = TypeVar("T")
 M = TypeVar("M")
@@ -30,3 +31,18 @@ def flatten(
             yield coerce(obj)
         else:
             yield obj
+
+
+def get_all_instances(cls: Type[T]) -> Sequence[T]:
+    """Get all class instances.
+
+    :type cls: class whose instances need to be looked up.
+    """
+    all_instances = []
+
+    all_objects = gc.get_objects()
+    for obj in all_objects:
+        if isinstance(obj, cls):
+            all_instances.append(obj)
+
+    return all_instances

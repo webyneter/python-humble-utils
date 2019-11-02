@@ -32,11 +32,11 @@ class Foo:
         pass
 
 
-class Boo(Foo):
+class BooFoo(Foo):
     pass
 
 
-class Moo(Boo):
+class MooBooFoo(BooFoo):
     pass
 
 

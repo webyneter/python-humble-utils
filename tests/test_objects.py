@@ -1,8 +1,10 @@
+import gc
 from typing import Optional, Callable, TypeVar
 
 import pytest
 
-from python_humble_utils.objects import flatten
+from python_humble_utils.objects import flatten, get_all_instances
+from tests.conftest import BooFoo, Foo, MooBooFoo
 
 T = TypeVar("T")
 M = TypeVar("M")
@@ -30,3 +32,19 @@ def test_flatten(flatten_dicts_by_values: bool, coerce: Optional[Callable[[T], M
     if coerce is not None:
         expected = [coerce(e) for e in expected]
     assert flattened_obj == expected
+
+
+@pytest.mark.parametrize("num_instances", range(3))
+@pytest.mark.parametrize("num_spoiler_instances", range(3))
+def test_get_all_instances(num_instances: int, num_spoiler_instances: int):
+    expected_foo_instances = [Foo() for __ in range(num_instances)]
+    for i in range(num_spoiler_instances):
+        if i % 2 == 0:
+            BooFoo()
+        else:
+            MooBooFoo()
+
+    actual_foo_instances = get_all_instances(Foo)
+
+    assert len(actual_foo_instances) == num_instances
+    assert all(fi in expected_foo_instances for fi in actual_foo_instances)
