@@ -8,8 +8,7 @@ M = TypeVar("M")
 def flatten(
     obj: Any, flatten_dicts_by_values: bool = True, coerce: Optional[Callable[[T], M]] = None
 ) -> Iterable[M]:
-    """
-    Flatten an arbitrarily complex object.
+    """Flatten an arbitrarily complex object.
 
     :param obj: an obj to flatten.
     :param flatten_dicts_by_values: if True, mapping will be flattened by values, otherwise by keys.
