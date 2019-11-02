@@ -5,9 +5,9 @@ Python Humble Utils
     :target: https://travis-ci.org/webyneter/python-humble-utils
     :alt: Build Status
 
-.. image:: https://pyup.io/repos/github/webyneter/python-humble-utils/shield.svg
-    :target: https://pyup.io/repos/github/webyneter/python-humble-utils
-    :alt: Updates
+.. image:: https://badgen.net/dependabot/webyneter/python-humble-utils/?icon=dependabot
+    :target: https://badgen.net/dependabot/webyneter/python-humble-utils/?icon=dependabot
+    :alt: dependabot
 
 .. image:: https://codecov.io/gh/webyneter/python-humble-utils/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/webyneter/python-humble-utils
