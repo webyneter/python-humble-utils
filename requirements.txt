@@ -1,4 +1,4 @@
-wheel==0.34.2
+wheel==0.38.1
 ipython==7.12.0
 bumpversion==0.5.3
 watchdog==0.10.2
